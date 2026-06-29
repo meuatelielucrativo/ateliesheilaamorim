@@ -6,6 +6,14 @@ gtag('js', new Date());
 gtag('config', 'G-MPB5QZX4X9');
 
 // ============================================================
+// 0. TRACKING DE EVENTOS (GA4) — medir o funil até o WhatsApp
+// Marque "clique_whatsapp" como conversão/evento principal no painel do GA4.
+// ============================================================
+function trackEvent(nome, params) {
+  try { if (typeof gtag === 'function') gtag('event', nome, params || {}); } catch (e) {}
+}
+
+// ============================================================
 // 1. ADICIONAR PRODUTO (3 tipos: tema | nome | consulta)
 // ============================================================
 function escolherProduto(categoria, nomeProduto, tipo = 'tema') {
@@ -14,6 +22,7 @@ function escolherProduto(categoria, nomeProduto, tipo = 'tema') {
     if (tipo === 'consulta') {
         const telefone = "5522988241470";
         const msg = `Olá Sheila! 💛%0D%0AGostaria de um orçamento para: *${categoria}* - ${nomeProduto}.%0D%0AAguardo os detalhes. Obrigada! 🌸`;
+        trackEvent('clique_whatsapp', { origem: 'orcamento_consulta', produto: nomeProduto });
         window.open(`https://wa.me/${telefone}?text=${msg}`, '_blank');
         return;
     }
@@ -96,6 +105,7 @@ function adicionarAoCarrinho(item) {
     let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
     carrinho.push(item);
     localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
+    trackEvent('adicionar_lista', { produto: item.nome, categoria: item.categoria });
     atualizarContador();
     return carrinho.length - 1;
 }
@@ -305,6 +315,7 @@ function finalizarCompraZap() {
     mensagem += "%0D%0AAguardo o valor e prazo de entrega. Obrigada! 🌸";
 
     const telefoneSheila = "5522988241470";
+    trackEvent('clique_whatsapp', { origem: 'finalizar_pedido', itens: carrinho.length });
     window.open(`https://wa.me/${telefoneSheila}?text=${mensagem}`, '_blank');
     fecharModalSucesso();
 }
@@ -372,6 +383,18 @@ window.addEventListener('load', function() {
     });
 
     iniciarDepoimentos();
+
+    // Tracking de cliques: links de WhatsApp e navegação pro catálogo
+    document.addEventListener('click', function (e) {
+        const a = e.target.closest && e.target.closest('a');
+        if (!a) return;
+        const href = a.getAttribute('href') || '';
+        if (/wa\.me|whatsapp/i.test(href)) {
+            trackEvent('clique_whatsapp', { origem: a.dataset.zap || 'link', destino: href.slice(0, 60) });
+        } else if (/paginas-produtos\//i.test(href)) {
+            trackEvent('ver_produto', { item: (a.textContent || '').trim().slice(0, 40), destino: href });
+        }
+    });
 });
 
 function fecharPopup() {
