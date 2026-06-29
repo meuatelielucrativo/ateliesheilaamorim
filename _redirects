@@ -47,9 +47,10 @@
 
 
 # ------------------------------------------------------------
-# CATCH-ALL - SEMPRE POR ÚLTIMO
-# Qualquer URL que não bateu em nenhuma regra acima cai na home.
-# Isso evita que a cliente veja página de erro 404 feia.
+# PÁGINA 404
+# URLs que não baterem em nenhuma regra acima recebem a 404.html
+# com STATUS 404 real (o Netlify serve /404.html automaticamente).
+# NÃO usar catch-all 301 -> home: o Google trataria toda URL
+# inexistente como "movida permanentemente" e mascararia links
+# quebrados, poluindo o índice. Sem catch-all = comportamento correto.
 # ------------------------------------------------------------
-
-/*               /index.html                           301

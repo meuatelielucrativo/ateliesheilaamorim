@@ -50,7 +50,7 @@ function escolherProduto(categoria, nomeProduto, tipo = 'tema') {
 // 2. SELECIONAR TEMA - sempre aplica no PRIMEIRO item aguardando (FIFO)
 // ============================================================
 function selecionarMatriz(nomeMatriz) {
-    let carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
 
     // Pega sempre o primeiro item que está aguardando tema (FIFO)
     const indiceAlvo = carrinho.findIndex(item => item.aguardando_tema);
@@ -64,7 +64,7 @@ function selecionarMatriz(nomeMatriz) {
     // Aplica o tema no item
     carrinho[indiceAlvo].matriz = nomeMatriz;
     carrinho[indiceAlvo].aguardando_tema = false;
-    sessionStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
+    localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
 
     atualizarContador();
     atualizarBarraTemaTopo();
@@ -93,9 +93,9 @@ function selecionarMatriz(nomeMatriz) {
 // 3. HELPER: adiciona item ao carrinho, retorna o índice
 // ============================================================
 function adicionarAoCarrinho(item) {
-    let carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
     carrinho.push(item);
-    sessionStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
+    localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
     atualizarContador();
     return carrinho.length - 1;
 }
@@ -143,7 +143,7 @@ function atualizarBarraTemaTopo() {
     const barra = document.getElementById('barra-tema-topo');
     if (!barra) return;
 
-    const carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    const carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
     const aguardando = carrinho.find(item => item.aguardando_tema);
 
     if (aguardando) {
@@ -196,7 +196,7 @@ function injetarModalLista() {
 }
 
 function mostrarLista() {
-    const carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    const carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
 
     if (carrinho.length === 0) {
         mostrarToast('Sua lista está vazia!', 'erro');
@@ -241,9 +241,9 @@ function fecharModalLista() {
 }
 
 function removerItem(index) {
-    let carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
     carrinho.splice(index, 1);
-    sessionStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
+    localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
     atualizarContador();
     atualizarBarraTemaTopo();
 
@@ -260,7 +260,7 @@ function removerItem(index) {
 // ============================================================
 function limparSacola() {
     if (confirm("Tem certeza que deseja limpar toda a sua lista de pedidos?")) {
-        sessionStorage.removeItem('meu_carrinho');
+        localStorage.removeItem('meu_carrinho');
         sessionStorage.removeItem('toast_pendente');
         atualizarContador();
         atualizarBarraTemaTopo();
@@ -272,7 +272,7 @@ function limparSacola() {
 // 8. FINALIZAR NO WHATSAPP (com bloqueio se houver item sem tema)
 // ============================================================
 function finalizarCompraZap() {
-    let carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
 
     if (carrinho.length === 0) {
         mostrarToast('Sua lista está vazia!', 'erro');
@@ -313,7 +313,7 @@ function finalizarCompraZap() {
 // 9. CONTADOR + ESTADO VISUAL DO BOTÃO FINALIZAR
 // ============================================================
 function atualizarContador() {
-    const carrinho = JSON.parse(sessionStorage.getItem('meu_carrinho')) || [];
+    const carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
     const temItemSemTema = carrinho.some(item => item.aguardando_tema);
 
     const barras = document.querySelectorAll('.floating-bar');
