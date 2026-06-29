@@ -369,11 +369,9 @@ window.addEventListener('load', function() {
         sessionStorage.removeItem('toast_pendente');
     }
 
-    const popupAgenda = document.getElementById('popup-agenda');
-    if (popupAgenda && !sessionStorage.getItem('popupVisto')) {
-        setTimeout(() => { popupAgenda.style.display = 'flex'; }, 1000);
-        sessionStorage.setItem('popupVisto', 'true');
-    }
+    // Popup de entrada DESATIVADO no load — abria em ~1s e dava fricção no
+    // tráfego pago (forte suspeito do bounce de 9s). No Bloco 2 ele vira isca
+    // de captura de lead disparada por exit-intent. Segue oculto no DOM.
 
     window.addEventListener('click', function(event) {
         const modal = document.getElementById('modal-sucesso');
@@ -395,6 +393,19 @@ window.addEventListener('load', function() {
             trackEvent('ver_produto', { item: (a.textContent || '').trim().slice(0, 40), destino: href });
         }
     });
+
+    // Reveal no scroll (movimento leve) — IntersectionObserver + classe .in
+    const _rev = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+            });
+        }, { threshold: 0.12 });
+        _rev.forEach(function (el) { io.observe(el); });
+    } else {
+        _rev.forEach(function (el) { el.classList.add('in'); });
+    }
 });
 
 function fecharPopup() {

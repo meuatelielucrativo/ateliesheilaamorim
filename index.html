@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Enxoval de bebê personalizado e bordado com amor. Toalhas, fraldas e kits escolares. Atelier Sheila Amorim.">
-    
+
     <title>Atelier Sheila Amorim — Enxoval de bebê personalizado e bordado à mão</title>
     <link rel="canonical" href="https://ateliersheilaamorim.com.br/">
     <meta property="og:type" content="website">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         /* --- ESTILOS EXTRAS DA HOME --- */
 
@@ -48,7 +48,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         body { padding-top: 60px; }
 
         /* 2. LOGO EM CSS */
@@ -133,22 +133,118 @@
     </div>
 
     <!-- Cabeçalho / Logo -->
-    <header style="text-align: center; padding: 40px 20px 20px 20px;">
+    <header style="text-align: center; padding: 30px 20px 10px 20px;">
         <h1 class="logo-css" style="margin:0;">
             <span class="atelier">Atelier</span>
             <span class="nome">Sheila Amorim</span>
         </h1>
     </header>
 
-    <!-- Seção Sobre / Minha História -->
-    <section id="sobre" style="padding: 40px 20px; background: white;">
-        <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; flex-wrap: wrap; gap: 40px;">
-            <div style="flex: 1; min-width: 300px;">
-                <img src="img/sheila.jpg" alt="Sheila Amorim" style="width: 100%; border-radius: 15px; box-shadow: 15px 15px 0px #E8B41B;">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-txt reveal">
+            <div class="hero-eyebrow">Feito à mão · Personalizado</div>
+            <h2>O enxoval do seu bebê, <span>bordado à mão</span> com o nome e o tema que você escolher.</h2>
+            <p>Toalhas, fraldas, naninhas, cueiros e kits únicos — peças que viram lembrança. Você monta sua lista, escolhe o tema do bordado e finaliza pelo WhatsApp, com atenção em cada detalhe.</p>
+            <div class="hero-ctas">
+                <a href="#catalogo" class="btn-dourado">Ver catálogo</a>
+                <a href="https://wa.me/5522988241470?text=Oi%20Sheila!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20enxoval%20personalizado." target="_blank" rel="noopener" class="btn-zap" data-zap="hero"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
             </div>
-            <div style="flex: 1; min-width: 300px;">
+        </div>
+        <div class="hero-img reveal">
+            <!-- TROCAR pela melhor foto horizontal que a Sheila enviar (de preferência bebê usando a peça) -->
+            <img src="img/CAT-BANHO.jpeg" alt="Bebê com peça bordada do Atelier Sheila Amorim" fetchpriority="high">
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" style="background: white; padding: 50px 20px;">
+        <h2 class="reveal" style="text-align: center; color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem;">Catálogo</h2>
+        <p class="reveal" style="text-align: center; margin-bottom: 40px; color: #666;">Clique nas fotos abaixo para ver os modelos:</p>
+
+        <div class="grid-container">
+            <div class="card reveal">
+                <img src="img/CAT-FRALDAS.jpeg" alt="Fraldas personalizadas bordadas" loading="lazy">
+                <h3>🧸 Fraldas</h3>
+                <a href="paginas-produtos/fraldas.html" class="btn-dourado">Ver Opções</a>
+            </div>
+
+            <div class="card reveal">
+                <img src="img/CAT-BANHO.jpeg" alt="Toalhas e roupão de banho bordados" loading="lazy">
+                <h3>🛀 Hora do Banho</h3>
+                <p>Toalhas e roupão.</p>
+                <a href="paginas-produtos/banho.html" class="btn-dourado">Ver Opções</a>
+            </div>
+
+            <div class="card reveal">
+                <img src="img/CAT-SONO.jpeg" alt="Mantas, cobertores e cueiros bordados" loading="lazy">
+                <h3>💤 Hora da Soneca</h3>
+                <p>Mantas, cobertores e cueiros.</p>
+                <a href="paginas-produtos/soninho.html" class="btn-dourado">Ver Opções</a>
+            </div>
+
+            <div class="card reveal">
+                <img src="img/CAT-ORGANIZACAO.jpeg" alt="Necessaires, trocadores e porta-documentos bordados" loading="lazy">
+                <h3>👛 Organização</h3>
+                <p>Necessaires, trocadores e Porta-docs.</p>
+                <a href="paginas-produtos/organizacao.html" class="btn-dourado">Ver Opções</a>
+            </div>
+
+            <div class="card reveal">
+                <img src="img/CAT-ACESSORIOS.jpeg" alt="Naninhas, toucas e babadores bordados" loading="lazy">
+                <h3>🎀 Acessórios</h3>
+                <p>Naninha, toucas, babadores e tags.</p>
+                <a href="paginas-produtos/acessorios.html" class="btn-dourado">Ver Opções</a>
+            </div>
+
+            <div class="card reveal">
+                <img src="img/CAT-ESCOLAR.jpeg" alt="Kit escolar personalizado bordado" loading="lazy">
+                <h3>🎒 Volta às Aulas</h3>
+                <p>Organize seu kit.</p>
+                <a href="paginas-produtos/escolar.html" class="btn-dourado">Ver Opções</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passo a Passo do Pedido -->
+    <section style="background-color: #faf9f6; padding: 50px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="reveal" style="text-align: center; color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 40px;">Passo a Passo do Pedido</h2>
+
+            <div class="grid-container" style="gap: 20px;">
+                <div class="step-box reveal">
+                    <span class="step-number">01</span>
+                    <h4 class="step-title">Monte sua Lista</h4>
+                    <p style="color: #555;">Escolha os produtos (toalhas, fraldas) e clique em <strong>"Adicionar"</strong>.</p>
+                </div>
+                <div class="step-box reveal">
+                    <span class="step-number">02</span>
+                    <h4 class="step-title">Escolha o Tema</h4>
+                    <p style="color: #555;">Vá até a aba <strong>"Temas"</strong> e escolha o desenho que será bordado.</p>
+                </div>
+                <div class="step-box reveal">
+                    <span class="step-number">03</span>
+                    <h4 class="step-title">Finalize no WhatsApp</h4>
+                    <p style="color: #555;">Envie a lista pelo botão verde para confirmarmos detalhes e frete.</p>
+                </div>
+                <div class="step-box reveal">
+                    <span class="step-number">04</span>
+                    <h4 class="step-title">Pagamento</h4>
+                    <p style="color: #555;">50% de sinal para iniciar e o restante apenas no envio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre / Minha História -->
+    <section id="sobre" style="padding: 50px 20px; background: white;">
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; flex-wrap: wrap; gap: 40px;">
+            <div class="reveal" style="flex: 1; min-width: 300px;">
+                <img src="img/sheila.jpg" alt="Sheila Amorim no ateliê" loading="lazy" style="width: 100%; border-radius: 15px; box-shadow: 15px 15px 0px #E8B41B;">
+            </div>
+            <div class="reveal" style="flex: 1; min-width: 300px;">
                 <h4 style="text-transform: uppercase; letter-spacing: 2px; color: #E8B41B; font-weight: bold; font-size: 0.9rem;">Uma história bordada com amor</h4>
-                
+
                 <p style="color: #666; line-height: 1.6; margin-bottom: 15px; text-align: justify;">
                     Desde pequena, o som da máquina de costura e o cheiro de tecido novo fazem parte da minha vida. Neta de costureira, herdei não só o talento, mas também o carinho por cada ponto dado.
                 </p>
@@ -168,92 +264,13 @@
         </div>
     </section>
 
-    <!-- Passo a Passo do Pedido -->
-    <section style="background-color: #faf9f6; padding: 50px 20px;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 40px;">Passo a Passo do Pedido</h2>
-            
-            <div class="grid-container" style="gap: 20px;">
-                <div class="step-box">
-                    <span class="step-number">01</span>
-                    <h4 class="step-title">Monte sua Lista</h4>
-                    <p style="color: #555;">Escolha os produtos (toalhas, fraldas) e clique em <strong>"Adicionar"</strong>.</p>
-                </div>
-                <div class="step-box">
-                    <span class="step-number">02</span>
-                    <h4 class="step-title">Escolha o Tema</h4>
-                    <p style="color: #555;">Vá até a aba <strong>"Temas"</strong> e escolha o desenho que será bordado.</p>
-                </div>
-                <div class="step-box">
-                    <span class="step-number">03</span>
-                    <h4 class="step-title">Finalize no WhatsApp</h4>
-                    <p style="color: #555;">Envie a lista pelo botão verde para confirmarmos detalhes e frete.</p>
-                </div>
-                <div class="step-box">
-                    <span class="step-number">04</span>
-                    <h4 class="step-title">Pagamento</h4>
-                    <p style="color: #555;">50% de sinal para iniciar e o restante apenas no envio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Catálogo -->
-    <section id="catalogo" style="background: white; padding: 50px 20px;">
-        <h2 style="text-align: center; color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem;">Catálogo</h2>
-        <p style="text-align: center; margin-bottom: 40px; color: #666;">Clique nas fotos abaixo para ver os modelos:</p>
-        
-        <div class="grid-container">
-            <div class="card">
-                <img src="img/CAT-FRALDAS.jpeg" alt="Fraldas personalizadas bordadas" loading="lazy">
-                <h3>🧸 Fraldas</h3>
-                <a href="paginas-produtos/fraldas.html" class="btn-dourado">Ver Opções</a>
-            </div>
-            
-            <div class="card">
-                <img src="img/CAT-BANHO.jpeg" alt="Toalhas e roupão de banho bordados" loading="lazy">
-                <h3>🛀 Hora do Banho</h3>
-                <p>Toalhas e roupão.</p>
-                <a href="paginas-produtos/banho.html" class="btn-dourado">Ver Opções</a>
-            </div>
-            
-            <div class="card">
-                <img src="img/CAT-SONO.jpeg" alt="Mantas, cobertores e cueiros bordados" loading="lazy">
-                <h3>💤 Hora da Soneca</h3>
-                <p>Mantas, cobertores e cueiros.</p>
-                <a href="paginas-produtos/soninho.html" class="btn-dourado">Ver Opções</a>
-            </div>
-            
-            <div class="card">
-                <img src="img/CAT-ORGANIZACAO.jpeg" alt="Necessaires, trocadores e porta-documentos bordados" loading="lazy">
-                <h3>👛 Organização</h3>
-                <p>Necessaires, trocadores e Porta-docs.</p>
-                <a href="paginas-produtos/organizacao.html" class="btn-dourado">Ver Opções</a>
-            </div>
-            
-            <div class="card">
-                <img src="img/CAT-ACESSORIOS.jpeg" alt="Naninhas, toucas e babadores bordados" loading="lazy">
-                <h3>🎀 Acessórios</h3>
-                <p>Naninha, toucas, babadores e tags.</p>
-                <a href="paginas-produtos/acessorios.html" class="btn-dourado">Ver Opções</a>
-            </div>
-            
-            <div class="card">
-                <img src="img/CAT-ESCOLAR.jpeg" alt="Kit escolar personalizado bordado" loading="lazy">
-                <h3>🎒 Volta às Aulas</h3>
-                <p>Organize seu kit.</p>
-                <a href="paginas-produtos/escolar.html" class="btn-dourado">Ver Opções</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Depoimentos (apenas uma seção) -->
     <section style="background-color: #faf9f6; padding: 50px 20px; text-align: center;">
-        <h2 style="color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 10px;">O que dizem as Mamães</h2>
-        <p style="color: #666; margin-bottom: 40px;">Carinho recebido de quem já confiou no nosso trabalho.</p>
-        
+        <h2 class="reveal" style="color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 10px;">O que dizem as Mamães</h2>
+        <p class="reveal" style="color: #666; margin-bottom: 40px;">Carinho recebido de quem já confiou no nosso trabalho.</p>
+
         <div class="testimonial-slider" style="max-width: 700px; margin: 0 auto; position: relative; height: 250px; overflow: hidden;">
-            
+
             <div class="testimonial-slide active">
                 <div style="font-size: 1.5rem; color: #E8B41B; margin-bottom: 15px;">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -289,8 +306,8 @@
 
         </div>
 
-        <div style="margin-top: 30px;">
-            <a href="https://wa.me/5522988241470?text=Oi%20Sheila!%20Gostaria%20de%20deixar%20um%20depoimento%20sobre%20o%20pedido..." target="_blank" class="btn-dourado" style="background: white; color: #E8B41B; border: 2px solid #E8B41B;">
+        <div class="reveal" style="margin-top: 30px;">
+            <a href="https://wa.me/5522988241470?text=Oi%20Sheila!%20Gostaria%20de%20deixar%20um%20depoimento%20sobre%20o%20pedido..." target="_blank" rel="noopener" data-zap="depoimento" class="btn-dourado" style="background: white; color: #E8B41B; border: 2px solid #E8B41B;">
                 <i class="far fa-comment-dots"></i> Deixar meu Depoimento
             </a>
         </div>
@@ -299,7 +316,7 @@
     <!-- FAQ + Formas de Pagamento -->
     <section style="background: white; padding: 50px 20px; border-top: 1px solid #eee;">
         <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
-            <div style="flex: 1; min-width: 300px;">
+            <div class="reveal" style="flex: 1; min-width: 300px;">
                 <h3 style="color: #4A4A4A; margin-bottom: 20px; border-left: 4px solid #E8B41B; padding-left: 10px; font-family: 'Lato', sans-serif;">Dúvidas Frequentes</h3>
                 <details style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px; cursor: pointer;">
                     <summary style="font-weight: bold; color: #555; font-size: 1.1rem;">Qual o prazo de produção?</summary>
@@ -315,7 +332,7 @@
                 </details>
             </div>
 
-            <div style="flex: 1; min-width: 300px; background: #faf9f6; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div class="reveal" style="flex: 1; min-width: 300px; background: #faf9f6; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                 <h3 style="color: #4A4A4A; margin-bottom: 20px; font-family: 'Lato', sans-serif;">Formas de Pagamento</h3>
                 <div style="font-size: 3rem; color: #4A4A4A; display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
                     <i class="fab fa-pix" title="Pix" style="color: #32BCAD;"></i>
@@ -330,14 +347,14 @@
     <section style="background-color: #4A4A4A; padding: 40px 20px; text-align: center; color: white;">
         <h2 style="font-family: 'Great Vibes'; font-size: 3rem; color: #E8B41B; margin-bottom: 30px;">Fale Conosco</h2>
         <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            <a href="https://instagram.com/ateliersheilaamorim" target="_blank" style="color: white; text-align: center; text-decoration: none;">
+            <a href="https://instagram.com/ateliersheilaamorim" target="_blank" rel="noopener" style="color: white; text-align: center; text-decoration: none;">
                 <i class="fab fa-instagram" style="font-size: 2.5rem; margin-bottom: 10px; color: #E8B41B;"></i>
                 <div style="font-size: 1rem;">@ateliersheilaamorim</div>
             </a>
-            <a href="https://wa.me/5522988241470" target="_blank" style="color: white; text-align: center; text-decoration: none;">
+            <a href="https://wa.me/5522988241470" target="_blank" rel="noopener" data-zap="contato" style="color: white; text-align: center; text-decoration: none;">
                 <i class="fab fa-whatsapp" style="font-size: 2.5rem; margin-bottom: 10px; color: #E8B41B;"></i>
                 <div style="font-size: 1rem;">(22) 98824-1470</div>
-            </a>        
+            </a>
         </div>
     </section>
 
@@ -358,7 +375,7 @@
         </div>
     </div>
 
-    <!-- Popup de boas-vindas (único) -->
+    <!-- Popup de captura (mostrado por exit-intent / inatividade — ver script.js) -->
     <div id="popup-agenda" class="modal-overlay">
         <div class="modal-content" style="text-align: center; max-width: 400px;">
             <span onclick="fecharPopup()" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem;">&times;</span>
