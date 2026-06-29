@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volta às Aulas | Atelier Sheila</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPB5QZX4X9"></script>
+</head>
+<body class="pagina-produtos">
+
+    <div class="header-produto">
+        <a href="../index.html" style="color: #666; font-weight: bold; text-decoration: none;">⬅ Voltar ao Início</a>
+        <h1 style="color: #E8B41B; margin-top: 15px; font-family: 'Great Vibes'; font-size: 3rem;">Volta às Aulas</h1>
+        <p style="color: #666;">Organização escolar com estilo e carinho.</p>
+    </div>
+
+    <div class="grid-container">
+        
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/TOALHINHA-ESCOLAR-01.jpeg" alt="Toalhinha 01">
+                <img src="../img/produtos/TOALHINHA-ESCOLAR-02.jpeg" alt="Toalhinha 02">
+                <img src="../img/produtos/TOALHINHA-ESCOLAR-03.jpeg" alt="Toalhinha 03">
+            </div>
+            <span class="aviso-arraste">Arraste para ver cores</span>
+            <h3>Toalhinhas Escolares</h3>
+            
+            <div class="descricao-tecnica">
+                Indispensável para a lancheira. Marca Döhler.<br>
+                Consultar cores disponíveis.<br>
+                <em>*Bordado incluso (nome + tema)</em>
+            </div>
+            <div class="variacoes-container">
+                <button
+                    onclick="escolherProduto('Escolar', 'Toalhinha Basiquinha (Nome) - R$ 35,00', 'tema')"
+                    class="btn-dourado"
+                    style="width: 100%; margin-top: 15px;">
+                    Adicionar R$ 35,00
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/ESTOJO-01.jpeg" alt="Estojo 01">
+                <img src="../img/produtos/ESTOJO-02.jpeg" alt="Estojo 02">
+                <img src="../img/produtos/ESTOJO-03.jpeg" alt="Estojo 03">
+                <img src="../img/produtos/ESTOJO-04.jpeg" alt="Estojo 04">
+                <img src="../img/produtos/ESTOJO-05.jpeg" alt="Estojo 05">
+                <img src="../img/produtos/ESTOJO-06.jpeg" alt="Estojo 06">
+            </div>
+            <span class="aviso-arraste">Arraste para ver cores</span>
+            <h3>Estojos Escolares</h3>
+            <div class="descricao-tecnica">
+                Estojo Box ou Simples. Tecido estruturado e fácil de limpar.
+            </div>
+            <button
+                onclick="escolherProduto('Escolar', 'Estojo Personalizado', 'consulta')"
+                class="btn-dourado"
+                style="width: 100%; margin-top: 15px;">
+                Consultar Modelos
+            </button>
+        </div>
+        
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/ROUPA-LIMPA-01.jpeg" alt="Saquinho Roupa Limpa">
+            </div>
+            <span class="aviso-arraste">Arraste para ver detalhes</span>
+            <h3>Kit Saquinhos Organizadores</h3>
+            <div class="descricao-tecnica">
+                Para roupa limpa/suja (impermeável).
+            </div>
+            <button
+                onclick="escolherProduto('Escolar', 'Kit Saquinhos Organizadores', 'consulta')"
+                class="btn-dourado"
+                style="width: 100%; margin-top: 15px;">
+                Solicitar Orçamento
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/HIGIENE-01.jpeg" alt="Kit Higiene 1">
+                <img src="../img/produtos/HIGIENE-02.jpeg" alt="Kit Higiene 2">
+                <img src="../img/produtos/HIGIENE-03.jpeg" alt="Kit Higiene 3">
+            </div>
+            <span class="aviso-arraste">Arraste para ver cores</span>
+
+            <h3>Kit Higiene Bucal</h3>
+            <div class="descricao-tecnica">
+                <strong>Modelo Tradicional (25x20cm):</strong> bolso transparente, impermeável e zíper.<br>
+                <strong>Modelo Dentinho (12,5x25cm):</strong> formato lúdico de dente.<br>
+                *Bordado incluido (nome)
+            </div>
+            <button
+                onclick="escolherProduto('Escolar', 'Necessaire Higiene - R$ 70,00', 'tema')"
+                class="btn-dourado"
+                style="width: 100%; margin-top: 15px;">
+                Adicionar R$ 70,00
+            </button>
+        </div>
+
+    </div>
+
+    <div class="floating-bar">
+        <div class="btn-trash" onclick="limparSacola()" title="Esvaziar Lista">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <div class="sacola-float" onclick="finalizarCompraZap()">
+            <i class="fab fa-whatsapp"></i><span>Minha Lista</span><div class="contador">0</div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

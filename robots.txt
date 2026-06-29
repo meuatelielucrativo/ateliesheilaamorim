@@ -1,0 +1,13 @@
+# ============================================================
+# Atelier Sheila Amorim - Instruções para robôs de busca
+# Doc: https://developers.google.com/search/docs/crawling-indexing/robots/intro
+# ============================================================
+
+# Todos os robôs de busca (Google, Bing, DuckDuckGo, etc.)
+User-agent: *
+
+# Permite acessar tudo
+Allow: /
+
+# Localização do mapa do site
+Sitemap: https://ateliersheilaamorim.com.br/sitemap.xml

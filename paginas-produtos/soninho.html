@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soninho e Aconchego | Atelier Sheila</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPB5QZX4X9"></script>
+</head>
+<body class="pagina-produtos">
+
+    <div class="header-produto">
+        <a href="../index.html" >⬅ Voltar ao Início</a>
+        <h1 style="color: #E8B41B; margin-top: 15px; font-family: 'Great Vibes'; font-size: 3rem;">Soninho &amp; Aconchego</h1>
+        <p>Peças quentinhas e cheias de amor para o bebê.</p>
+    </div>
+
+    <div class="grid-container">
+        
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/CUEIRO-01.jpeg" alt="Cueiro 01">
+                <img src="../img/produtos/CUEIRO-02.jpeg" alt="Cueiro 02">
+                <img src="../img/produtos/CUEIRO-03.jpeg" alt="Cueiro 03">
+                <img src="../img/produtos/CUEIRO-04.jpeg" alt="Cueiro 04">
+            </div>
+            <span class="aviso-arraste">
+                <i class="fas fa-hand-point-right"></i> Arraste para ver detalhes
+            </span>
+            <h3>Cueiros (Flanela)</h3>
+            <div class="descricao-tecnica">
+                Feito em moletom qualidade Mabber, avesso aveludado e macio. Ideal para enrolar o bebê no famoso "charutinho", proporcionando segurança e aconchego.<br>
+                <strong>Acabamento:</strong> Em picueta ou pompom (consultar disponibilidade de cores)<br>
+                Medida: 90x90cm<br>
+                <em>*Bordado incluso (nome + Tema)</em>
+            </div>
+            
+            <div class="variacoes-container">
+                <button
+                    onclick="escolherProduto('Soninho', 'Cueiro - R$ 130,00', 'tema')"
+                    class="btn-dourado"
+                    style="width: 100%; margin-top: 15px;">
+                    Adicionar R$ 130,00
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/MANTA-COBERTOR-01.jpeg" alt="Manta 01">
+                <img src="../img/produtos/MANTA-COBERTOR-02.jpeg" alt="Manta 02">
+            </div>
+            <span class="aviso-arraste">
+                <i class="fas fa-hand-point-right"></i> Arraste para ver detalhes
+            </span>
+    
+            <h3>Manta/Cobertor (Pipoquinha)</h3>
+
+            <div class="descricao-tecnica">
+                Modelo "pipoquinha", com toque aveludado e super macio, além de ser antialérgico. Super quentinha e sofisticada.<br>
+                Medida: 90x110cm (consultar disponibilidade de cores).<br>
+                <em>*Bordado incluso (nome + Tema)</em>
+            </div>
+            <button
+                onclick="escolherProduto('Soninho', 'Manta Pipoquinha - R$ 160,00', 'tema')"
+                class="btn-dourado"
+                style="width: 100%; margin-top: 15px;">
+                Adicionar R$ 160,00
+            </button>
+        </div>
+
+    </div>
+
+    <div class="floating-bar">
+        <div class="btn-trash" onclick="limparSacola()" title="Esvaziar Lista">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <div class="sacola-float" onclick="finalizarCompraZap()">
+            <i class="fab fa-whatsapp"></i><span>Minha Lista</span><div class="contador">0</div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

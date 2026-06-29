@@ -1,0 +1,55 @@
+# ============================================================
+# Atelier Sheila Amorim - Regras de redirecionamento
+# Doc oficial: https://docs.netlify.com/routing/redirects/
+#
+# Formato: [caminho que a cliente digita]  [pra onde leva]  [código HTTP]
+#
+# Códigos usados aqui:
+# - 301 = redirect permanente (navegador memoriza e nem consulta o servidor da próxima vez)
+# - 200 = "rewrite" (URL muda visualmente mas conteúdo vem de outro lugar) - NÃO usamos aqui
+# ============================================================
+
+
+# ------------------------------------------------------------
+# ATALHOS BONITOS DAS PÁGINAS DE PRODUTOS
+# Permite digitar URLs curtas ao invés do caminho completo.
+# Ex: ateliersheilaamorim.com.br/fraldas → vai pra fraldas.html
+# ------------------------------------------------------------
+
+/fraldas         /paginas-produtos/fraldas.html        301
+/banho           /paginas-produtos/banho.html          301
+/soninho         /paginas-produtos/soninho.html        301
+/organizacao     /paginas-produtos/organizacao.html    301
+/acessorios      /paginas-produtos/acessorios.html     301
+/escolar         /paginas-produtos/escolar.html        301
+/temas           /temas.html                           301
+
+
+# ------------------------------------------------------------
+# ATALHOS COM TÍLICA / ACENTO / HÍFEN
+# Caso a cliente digite com acento ou grafia diferente, continua funcionando.
+# ------------------------------------------------------------
+
+/organização     /paginas-produtos/organizacao.html    301
+/acessórios      /paginas-produtos/acessorios.html     301
+/volta-as-aulas  /paginas-produtos/escolar.html        301
+/escola          /paginas-produtos/escolar.html        301
+
+
+# ------------------------------------------------------------
+# ATALHOS DE MARKETING (opcional - úteis se sua mãe divulgar)
+# ------------------------------------------------------------
+
+/whatsapp        https://wa.me/5522988241470           301
+/zap             https://wa.me/5522988241470           301
+/insta           https://instagram.com/ateliersheilaamorim    301
+/instagram       https://instagram.com/ateliersheilaamorim    301
+
+
+# ------------------------------------------------------------
+# CATCH-ALL - SEMPRE POR ÚLTIMO
+# Qualquer URL que não bateu em nenhuma regra acima cai na home.
+# Isso evita que a cliente veja página de erro 404 feia.
+# ------------------------------------------------------------
+
+/*               /index.html                           301

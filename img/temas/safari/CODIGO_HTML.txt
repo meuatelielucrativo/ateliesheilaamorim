@@ -1,0 +1,976 @@
+
+            <div class="card" onclick="selecionarMatriz('SAF_01')">
+                <img src="img/temas/safari/SAF_01.jpg" alt="Tema SAF_01" loading="lazy">
+                <h3>Opção 01</h3>
+                <p class="cod-tecnico">Ref: SAF_01</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_02')">
+                <img src="img/temas/safari/SAF_02.jpg" alt="Tema SAF_02" loading="lazy">
+                <h3>Opção 02</h3>
+                <p class="cod-tecnico">Ref: SAF_02</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_03')">
+                <img src="img/temas/safari/SAF_03.jpg" alt="Tema SAF_03" loading="lazy">
+                <h3>Opção 03</h3>
+                <p class="cod-tecnico">Ref: SAF_03</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_04')">
+                <img src="img/temas/safari/SAF_04.jpg" alt="Tema SAF_04" loading="lazy">
+                <h3>Opção 04</h3>
+                <p class="cod-tecnico">Ref: SAF_04</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_05')">
+                <img src="img/temas/safari/SAF_05.jpg" alt="Tema SAF_05" loading="lazy">
+                <h3>Opção 05</h3>
+                <p class="cod-tecnico">Ref: SAF_05</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_06')">
+                <img src="img/temas/safari/SAF_06.jpg" alt="Tema SAF_06" loading="lazy">
+                <h3>Opção 06</h3>
+                <p class="cod-tecnico">Ref: SAF_06</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_07')">
+                <img src="img/temas/safari/SAF_07.jpg" alt="Tema SAF_07" loading="lazy">
+                <h3>Opção 07</h3>
+                <p class="cod-tecnico">Ref: SAF_07</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_08')">
+                <img src="img/temas/safari/SAF_08.jpg" alt="Tema SAF_08" loading="lazy">
+                <h3>Opção 08</h3>
+                <p class="cod-tecnico">Ref: SAF_08</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_09')">
+                <img src="img/temas/safari/SAF_09.jpg" alt="Tema SAF_09" loading="lazy">
+                <h3>Opção 09</h3>
+                <p class="cod-tecnico">Ref: SAF_09</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_10')">
+                <img src="img/temas/safari/SAF_10.jpg" alt="Tema SAF_10" loading="lazy">
+                <h3>Opção 10</h3>
+                <p class="cod-tecnico">Ref: SAF_10</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_11')">
+                <img src="img/temas/safari/SAF_11.jpg" alt="Tema SAF_11" loading="lazy">
+                <h3>Opção 11</h3>
+                <p class="cod-tecnico">Ref: SAF_11</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_12')">
+                <img src="img/temas/safari/SAF_12.jpg" alt="Tema SAF_12" loading="lazy">
+                <h3>Opção 12</h3>
+                <p class="cod-tecnico">Ref: SAF_12</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_13')">
+                <img src="img/temas/safari/SAF_13.jpg" alt="Tema SAF_13" loading="lazy">
+                <h3>Opção 13</h3>
+                <p class="cod-tecnico">Ref: SAF_13</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_14')">
+                <img src="img/temas/safari/SAF_14.jpg" alt="Tema SAF_14" loading="lazy">
+                <h3>Opção 14</h3>
+                <p class="cod-tecnico">Ref: SAF_14</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_15')">
+                <img src="img/temas/safari/SAF_15.jpg" alt="Tema SAF_15" loading="lazy">
+                <h3>Opção 15</h3>
+                <p class="cod-tecnico">Ref: SAF_15</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_16')">
+                <img src="img/temas/safari/SAF_16.jpg" alt="Tema SAF_16" loading="lazy">
+                <h3>Opção 16</h3>
+                <p class="cod-tecnico">Ref: SAF_16</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_17')">
+                <img src="img/temas/safari/SAF_17.jpg" alt="Tema SAF_17" loading="lazy">
+                <h3>Opção 17</h3>
+                <p class="cod-tecnico">Ref: SAF_17</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_18')">
+                <img src="img/temas/safari/SAF_18.jpg" alt="Tema SAF_18" loading="lazy">
+                <h3>Opção 18</h3>
+                <p class="cod-tecnico">Ref: SAF_18</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_19')">
+                <img src="img/temas/safari/SAF_19.jpg" alt="Tema SAF_19" loading="lazy">
+                <h3>Opção 19</h3>
+                <p class="cod-tecnico">Ref: SAF_19</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_20')">
+                <img src="img/temas/safari/SAF_20.jpg" alt="Tema SAF_20" loading="lazy">
+                <h3>Opção 20</h3>
+                <p class="cod-tecnico">Ref: SAF_20</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_21')">
+                <img src="img/temas/safari/SAF_21.jpg" alt="Tema SAF_21" loading="lazy">
+                <h3>Opção 21</h3>
+                <p class="cod-tecnico">Ref: SAF_21</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_22')">
+                <img src="img/temas/safari/SAF_22.jpg" alt="Tema SAF_22" loading="lazy">
+                <h3>Opção 22</h3>
+                <p class="cod-tecnico">Ref: SAF_22</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_23')">
+                <img src="img/temas/safari/SAF_23.jpg" alt="Tema SAF_23" loading="lazy">
+                <h3>Opção 23</h3>
+                <p class="cod-tecnico">Ref: SAF_23</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_24')">
+                <img src="img/temas/safari/SAF_24.jpg" alt="Tema SAF_24" loading="lazy">
+                <h3>Opção 24</h3>
+                <p class="cod-tecnico">Ref: SAF_24</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_25')">
+                <img src="img/temas/safari/SAF_25.jpg" alt="Tema SAF_25" loading="lazy">
+                <h3>Opção 25</h3>
+                <p class="cod-tecnico">Ref: SAF_25</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_26')">
+                <img src="img/temas/safari/SAF_26.jpg" alt="Tema SAF_26" loading="lazy">
+                <h3>Opção 26</h3>
+                <p class="cod-tecnico">Ref: SAF_26</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_27')">
+                <img src="img/temas/safari/SAF_27.jpg" alt="Tema SAF_27" loading="lazy">
+                <h3>Opção 27</h3>
+                <p class="cod-tecnico">Ref: SAF_27</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_28')">
+                <img src="img/temas/safari/SAF_28.jpg" alt="Tema SAF_28" loading="lazy">
+                <h3>Opção 28</h3>
+                <p class="cod-tecnico">Ref: SAF_28</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_29')">
+                <img src="img/temas/safari/SAF_29.jpg" alt="Tema SAF_29" loading="lazy">
+                <h3>Opção 29</h3>
+                <p class="cod-tecnico">Ref: SAF_29</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_30')">
+                <img src="img/temas/safari/SAF_30.jpg" alt="Tema SAF_30" loading="lazy">
+                <h3>Opção 30</h3>
+                <p class="cod-tecnico">Ref: SAF_30</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_31')">
+                <img src="img/temas/safari/SAF_31.jpg" alt="Tema SAF_31" loading="lazy">
+                <h3>Opção 31</h3>
+                <p class="cod-tecnico">Ref: SAF_31</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_32')">
+                <img src="img/temas/safari/SAF_32.jpg" alt="Tema SAF_32" loading="lazy">
+                <h3>Opção 32</h3>
+                <p class="cod-tecnico">Ref: SAF_32</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_33')">
+                <img src="img/temas/safari/SAF_33.jpg" alt="Tema SAF_33" loading="lazy">
+                <h3>Opção 33</h3>
+                <p class="cod-tecnico">Ref: SAF_33</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_34')">
+                <img src="img/temas/safari/SAF_34.jpg" alt="Tema SAF_34" loading="lazy">
+                <h3>Opção 34</h3>
+                <p class="cod-tecnico">Ref: SAF_34</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_35')">
+                <img src="img/temas/safari/SAF_35.jpg" alt="Tema SAF_35" loading="lazy">
+                <h3>Opção 35</h3>
+                <p class="cod-tecnico">Ref: SAF_35</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_36')">
+                <img src="img/temas/safari/SAF_36.jpg" alt="Tema SAF_36" loading="lazy">
+                <h3>Opção 36</h3>
+                <p class="cod-tecnico">Ref: SAF_36</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_37')">
+                <img src="img/temas/safari/SAF_37.jpg" alt="Tema SAF_37" loading="lazy">
+                <h3>Opção 37</h3>
+                <p class="cod-tecnico">Ref: SAF_37</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_38')">
+                <img src="img/temas/safari/SAF_38.jpg" alt="Tema SAF_38" loading="lazy">
+                <h3>Opção 38</h3>
+                <p class="cod-tecnico">Ref: SAF_38</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_39')">
+                <img src="img/temas/safari/SAF_39.jpg" alt="Tema SAF_39" loading="lazy">
+                <h3>Opção 39</h3>
+                <p class="cod-tecnico">Ref: SAF_39</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_40')">
+                <img src="img/temas/safari/SAF_40.jpg" alt="Tema SAF_40" loading="lazy">
+                <h3>Opção 40</h3>
+                <p class="cod-tecnico">Ref: SAF_40</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_41')">
+                <img src="img/temas/safari/SAF_41.jpg" alt="Tema SAF_41" loading="lazy">
+                <h3>Opção 41</h3>
+                <p class="cod-tecnico">Ref: SAF_41</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_42')">
+                <img src="img/temas/safari/SAF_42.jpg" alt="Tema SAF_42" loading="lazy">
+                <h3>Opção 42</h3>
+                <p class="cod-tecnico">Ref: SAF_42</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_43')">
+                <img src="img/temas/safari/SAF_43.jpg" alt="Tema SAF_43" loading="lazy">
+                <h3>Opção 43</h3>
+                <p class="cod-tecnico">Ref: SAF_43</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_44')">
+                <img src="img/temas/safari/SAF_44.jpg" alt="Tema SAF_44" loading="lazy">
+                <h3>Opção 44</h3>
+                <p class="cod-tecnico">Ref: SAF_44</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_45')">
+                <img src="img/temas/safari/SAF_45.jpg" alt="Tema SAF_45" loading="lazy">
+                <h3>Opção 45</h3>
+                <p class="cod-tecnico">Ref: SAF_45</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_46')">
+                <img src="img/temas/safari/SAF_46.jpg" alt="Tema SAF_46" loading="lazy">
+                <h3>Opção 46</h3>
+                <p class="cod-tecnico">Ref: SAF_46</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_47')">
+                <img src="img/temas/safari/SAF_47.jpg" alt="Tema SAF_47" loading="lazy">
+                <h3>Opção 47</h3>
+                <p class="cod-tecnico">Ref: SAF_47</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_48')">
+                <img src="img/temas/safari/SAF_48.jpg" alt="Tema SAF_48" loading="lazy">
+                <h3>Opção 48</h3>
+                <p class="cod-tecnico">Ref: SAF_48</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_49')">
+                <img src="img/temas/safari/SAF_49.jpg" alt="Tema SAF_49" loading="lazy">
+                <h3>Opção 49</h3>
+                <p class="cod-tecnico">Ref: SAF_49</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_50')">
+                <img src="img/temas/safari/SAF_50.jpg" alt="Tema SAF_50" loading="lazy">
+                <h3>Opção 50</h3>
+                <p class="cod-tecnico">Ref: SAF_50</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_51')">
+                <img src="img/temas/safari/SAF_51.jpg" alt="Tema SAF_51" loading="lazy">
+                <h3>Opção 51</h3>
+                <p class="cod-tecnico">Ref: SAF_51</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_52')">
+                <img src="img/temas/safari/SAF_52.jpg" alt="Tema SAF_52" loading="lazy">
+                <h3>Opção 52</h3>
+                <p class="cod-tecnico">Ref: SAF_52</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_53')">
+                <img src="img/temas/safari/SAF_53.jpg" alt="Tema SAF_53" loading="lazy">
+                <h3>Opção 53</h3>
+                <p class="cod-tecnico">Ref: SAF_53</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_54')">
+                <img src="img/temas/safari/SAF_54.jpg" alt="Tema SAF_54" loading="lazy">
+                <h3>Opção 54</h3>
+                <p class="cod-tecnico">Ref: SAF_54</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_55')">
+                <img src="img/temas/safari/SAF_55.jpg" alt="Tema SAF_55" loading="lazy">
+                <h3>Opção 55</h3>
+                <p class="cod-tecnico">Ref: SAF_55</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_56')">
+                <img src="img/temas/safari/SAF_56.jpg" alt="Tema SAF_56" loading="lazy">
+                <h3>Opção 56</h3>
+                <p class="cod-tecnico">Ref: SAF_56</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_57')">
+                <img src="img/temas/safari/SAF_57.jpg" alt="Tema SAF_57" loading="lazy">
+                <h3>Opção 57</h3>
+                <p class="cod-tecnico">Ref: SAF_57</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_58')">
+                <img src="img/temas/safari/SAF_58.jpg" alt="Tema SAF_58" loading="lazy">
+                <h3>Opção 58</h3>
+                <p class="cod-tecnico">Ref: SAF_58</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_59')">
+                <img src="img/temas/safari/SAF_59.jpg" alt="Tema SAF_59" loading="lazy">
+                <h3>Opção 59</h3>
+                <p class="cod-tecnico">Ref: SAF_59</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_60')">
+                <img src="img/temas/safari/SAF_60.jpg" alt="Tema SAF_60" loading="lazy">
+                <h3>Opção 60</h3>
+                <p class="cod-tecnico">Ref: SAF_60</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_61')">
+                <img src="img/temas/safari/SAF_61.jpg" alt="Tema SAF_61" loading="lazy">
+                <h3>Opção 61</h3>
+                <p class="cod-tecnico">Ref: SAF_61</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_62')">
+                <img src="img/temas/safari/SAF_62.jpg" alt="Tema SAF_62" loading="lazy">
+                <h3>Opção 62</h3>
+                <p class="cod-tecnico">Ref: SAF_62</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_63')">
+                <img src="img/temas/safari/SAF_63.jpg" alt="Tema SAF_63" loading="lazy">
+                <h3>Opção 63</h3>
+                <p class="cod-tecnico">Ref: SAF_63</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_64')">
+                <img src="img/temas/safari/SAF_64.jpg" alt="Tema SAF_64" loading="lazy">
+                <h3>Opção 64</h3>
+                <p class="cod-tecnico">Ref: SAF_64</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_65')">
+                <img src="img/temas/safari/SAF_65.jpg" alt="Tema SAF_65" loading="lazy">
+                <h3>Opção 65</h3>
+                <p class="cod-tecnico">Ref: SAF_65</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_66')">
+                <img src="img/temas/safari/SAF_66.jpg" alt="Tema SAF_66" loading="lazy">
+                <h3>Opção 66</h3>
+                <p class="cod-tecnico">Ref: SAF_66</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_67')">
+                <img src="img/temas/safari/SAF_67.jpg" alt="Tema SAF_67" loading="lazy">
+                <h3>Opção 67</h3>
+                <p class="cod-tecnico">Ref: SAF_67</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_68')">
+                <img src="img/temas/safari/SAF_68.jpg" alt="Tema SAF_68" loading="lazy">
+                <h3>Opção 68</h3>
+                <p class="cod-tecnico">Ref: SAF_68</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_69')">
+                <img src="img/temas/safari/SAF_69.jpg" alt="Tema SAF_69" loading="lazy">
+                <h3>Opção 69</h3>
+                <p class="cod-tecnico">Ref: SAF_69</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_70')">
+                <img src="img/temas/safari/SAF_70.jpg" alt="Tema SAF_70" loading="lazy">
+                <h3>Opção 70</h3>
+                <p class="cod-tecnico">Ref: SAF_70</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_71')">
+                <img src="img/temas/safari/SAF_71.jpg" alt="Tema SAF_71" loading="lazy">
+                <h3>Opção 71</h3>
+                <p class="cod-tecnico">Ref: SAF_71</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_72')">
+                <img src="img/temas/safari/SAF_72.jpg" alt="Tema SAF_72" loading="lazy">
+                <h3>Opção 72</h3>
+                <p class="cod-tecnico">Ref: SAF_72</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_73')">
+                <img src="img/temas/safari/SAF_73.jpg" alt="Tema SAF_73" loading="lazy">
+                <h3>Opção 73</h3>
+                <p class="cod-tecnico">Ref: SAF_73</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_74')">
+                <img src="img/temas/safari/SAF_74.jpg" alt="Tema SAF_74" loading="lazy">
+                <h3>Opção 74</h3>
+                <p class="cod-tecnico">Ref: SAF_74</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_75')">
+                <img src="img/temas/safari/SAF_75.jpg" alt="Tema SAF_75" loading="lazy">
+                <h3>Opção 75</h3>
+                <p class="cod-tecnico">Ref: SAF_75</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_76')">
+                <img src="img/temas/safari/SAF_76.jpg" alt="Tema SAF_76" loading="lazy">
+                <h3>Opção 76</h3>
+                <p class="cod-tecnico">Ref: SAF_76</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_77')">
+                <img src="img/temas/safari/SAF_77.png" alt="Tema SAF_77" loading="lazy">
+                <h3>Opção 77</h3>
+                <p class="cod-tecnico">Ref: SAF_77</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_78')">
+                <img src="img/temas/safari/SAF_78.jpg" alt="Tema SAF_78" loading="lazy">
+                <h3>Opção 78</h3>
+                <p class="cod-tecnico">Ref: SAF_78</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_79')">
+                <img src="img/temas/safari/SAF_79.jpg" alt="Tema SAF_79" loading="lazy">
+                <h3>Opção 79</h3>
+                <p class="cod-tecnico">Ref: SAF_79</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_80')">
+                <img src="img/temas/safari/SAF_80.jpg" alt="Tema SAF_80" loading="lazy">
+                <h3>Opção 80</h3>
+                <p class="cod-tecnico">Ref: SAF_80</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_81')">
+                <img src="img/temas/safari/SAF_81.jpg" alt="Tema SAF_81" loading="lazy">
+                <h3>Opção 81</h3>
+                <p class="cod-tecnico">Ref: SAF_81</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_82')">
+                <img src="img/temas/safari/SAF_82.jpg" alt="Tema SAF_82" loading="lazy">
+                <h3>Opção 82</h3>
+                <p class="cod-tecnico">Ref: SAF_82</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_83')">
+                <img src="img/temas/safari/SAF_83.jpg" alt="Tema SAF_83" loading="lazy">
+                <h3>Opção 83</h3>
+                <p class="cod-tecnico">Ref: SAF_83</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_84')">
+                <img src="img/temas/safari/SAF_84.jpg" alt="Tema SAF_84" loading="lazy">
+                <h3>Opção 84</h3>
+                <p class="cod-tecnico">Ref: SAF_84</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_85')">
+                <img src="img/temas/safari/SAF_85.png" alt="Tema SAF_85" loading="lazy">
+                <h3>Opção 85</h3>
+                <p class="cod-tecnico">Ref: SAF_85</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_86')">
+                <img src="img/temas/safari/SAF_86.jpg" alt="Tema SAF_86" loading="lazy">
+                <h3>Opção 86</h3>
+                <p class="cod-tecnico">Ref: SAF_86</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_87')">
+                <img src="img/temas/safari/SAF_87.jpg" alt="Tema SAF_87" loading="lazy">
+                <h3>Opção 87</h3>
+                <p class="cod-tecnico">Ref: SAF_87</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_88')">
+                <img src="img/temas/safari/SAF_88.png" alt="Tema SAF_88" loading="lazy">
+                <h3>Opção 88</h3>
+                <p class="cod-tecnico">Ref: SAF_88</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_89')">
+                <img src="img/temas/safari/SAF_89.jpg" alt="Tema SAF_89" loading="lazy">
+                <h3>Opção 89</h3>
+                <p class="cod-tecnico">Ref: SAF_89</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_90')">
+                <img src="img/temas/safari/SAF_90.jpg" alt="Tema SAF_90" loading="lazy">
+                <h3>Opção 90</h3>
+                <p class="cod-tecnico">Ref: SAF_90</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_91')">
+                <img src="img/temas/safari/SAF_91.jpg" alt="Tema SAF_91" loading="lazy">
+                <h3>Opção 91</h3>
+                <p class="cod-tecnico">Ref: SAF_91</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_92')">
+                <img src="img/temas/safari/SAF_92.jpg" alt="Tema SAF_92" loading="lazy">
+                <h3>Opção 92</h3>
+                <p class="cod-tecnico">Ref: SAF_92</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_93')">
+                <img src="img/temas/safari/SAF_93.jpg" alt="Tema SAF_93" loading="lazy">
+                <h3>Opção 93</h3>
+                <p class="cod-tecnico">Ref: SAF_93</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_94')">
+                <img src="img/temas/safari/SAF_94.jpg" alt="Tema SAF_94" loading="lazy">
+                <h3>Opção 94</h3>
+                <p class="cod-tecnico">Ref: SAF_94</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_95')">
+                <img src="img/temas/safari/SAF_95.jpg" alt="Tema SAF_95" loading="lazy">
+                <h3>Opção 95</h3>
+                <p class="cod-tecnico">Ref: SAF_95</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_96')">
+                <img src="img/temas/safari/SAF_96.jpg" alt="Tema SAF_96" loading="lazy">
+                <h3>Opção 96</h3>
+                <p class="cod-tecnico">Ref: SAF_96</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_97')">
+                <img src="img/temas/safari/SAF_97.jpg" alt="Tema SAF_97" loading="lazy">
+                <h3>Opção 97</h3>
+                <p class="cod-tecnico">Ref: SAF_97</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_98')">
+                <img src="img/temas/safari/SAF_98.jpg" alt="Tema SAF_98" loading="lazy">
+                <h3>Opção 98</h3>
+                <p class="cod-tecnico">Ref: SAF_98</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_99')">
+                <img src="img/temas/safari/SAF_99.png" alt="Tema SAF_99" loading="lazy">
+                <h3>Opção 99</h3>
+                <p class="cod-tecnico">Ref: SAF_99</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_100')">
+                <img src="img/temas/safari/SAF_100.jpg" alt="Tema SAF_100" loading="lazy">
+                <h3>Opção 100</h3>
+                <p class="cod-tecnico">Ref: SAF_100</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_101')">
+                <img src="img/temas/safari/SAF_101.jpg" alt="Tema SAF_101" loading="lazy">
+                <h3>Opção 101</h3>
+                <p class="cod-tecnico">Ref: SAF_101</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_102')">
+                <img src="img/temas/safari/SAF_102.jpg" alt="Tema SAF_102" loading="lazy">
+                <h3>Opção 102</h3>
+                <p class="cod-tecnico">Ref: SAF_102</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_103')">
+                <img src="img/temas/safari/SAF_103.jpg" alt="Tema SAF_103" loading="lazy">
+                <h3>Opção 103</h3>
+                <p class="cod-tecnico">Ref: SAF_103</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_104')">
+                <img src="img/temas/safari/SAF_104.jpg" alt="Tema SAF_104" loading="lazy">
+                <h3>Opção 104</h3>
+                <p class="cod-tecnico">Ref: SAF_104</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_105')">
+                <img src="img/temas/safari/SAF_105.jpg" alt="Tema SAF_105" loading="lazy">
+                <h3>Opção 105</h3>
+                <p class="cod-tecnico">Ref: SAF_105</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_106')">
+                <img src="img/temas/safari/SAF_106.png" alt="Tema SAF_106" loading="lazy">
+                <h3>Opção 106</h3>
+                <p class="cod-tecnico">Ref: SAF_106</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_107')">
+                <img src="img/temas/safari/SAF_107.png" alt="Tema SAF_107" loading="lazy">
+                <h3>Opção 107</h3>
+                <p class="cod-tecnico">Ref: SAF_107</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_108')">
+                <img src="img/temas/safari/SAF_108.png" alt="Tema SAF_108" loading="lazy">
+                <h3>Opção 108</h3>
+                <p class="cod-tecnico">Ref: SAF_108</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_109')">
+                <img src="img/temas/safari/SAF_109.png" alt="Tema SAF_109" loading="lazy">
+                <h3>Opção 109</h3>
+                <p class="cod-tecnico">Ref: SAF_109</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_110')">
+                <img src="img/temas/safari/SAF_110.png" alt="Tema SAF_110" loading="lazy">
+                <h3>Opção 110</h3>
+                <p class="cod-tecnico">Ref: SAF_110</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_111')">
+                <img src="img/temas/safari/SAF_111.png" alt="Tema SAF_111" loading="lazy">
+                <h3>Opção 111</h3>
+                <p class="cod-tecnico">Ref: SAF_111</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_112')">
+                <img src="img/temas/safari/SAF_112.png" alt="Tema SAF_112" loading="lazy">
+                <h3>Opção 112</h3>
+                <p class="cod-tecnico">Ref: SAF_112</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_113')">
+                <img src="img/temas/safari/SAF_113.png" alt="Tema SAF_113" loading="lazy">
+                <h3>Opção 113</h3>
+                <p class="cod-tecnico">Ref: SAF_113</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_114')">
+                <img src="img/temas/safari/SAF_114.png" alt="Tema SAF_114" loading="lazy">
+                <h3>Opção 114</h3>
+                <p class="cod-tecnico">Ref: SAF_114</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_115')">
+                <img src="img/temas/safari/SAF_115.png" alt="Tema SAF_115" loading="lazy">
+                <h3>Opção 115</h3>
+                <p class="cod-tecnico">Ref: SAF_115</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_116')">
+                <img src="img/temas/safari/SAF_116.png" alt="Tema SAF_116" loading="lazy">
+                <h3>Opção 116</h3>
+                <p class="cod-tecnico">Ref: SAF_116</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_117')">
+                <img src="img/temas/safari/SAF_117.png" alt="Tema SAF_117" loading="lazy">
+                <h3>Opção 117</h3>
+                <p class="cod-tecnico">Ref: SAF_117</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_118')">
+                <img src="img/temas/safari/SAF_118.png" alt="Tema SAF_118" loading="lazy">
+                <h3>Opção 118</h3>
+                <p class="cod-tecnico">Ref: SAF_118</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_119')">
+                <img src="img/temas/safari/SAF_119.png" alt="Tema SAF_119" loading="lazy">
+                <h3>Opção 119</h3>
+                <p class="cod-tecnico">Ref: SAF_119</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_120')">
+                <img src="img/temas/safari/SAF_120.png" alt="Tema SAF_120" loading="lazy">
+                <h3>Opção 120</h3>
+                <p class="cod-tecnico">Ref: SAF_120</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_121')">
+                <img src="img/temas/safari/SAF_121.png" alt="Tema SAF_121" loading="lazy">
+                <h3>Opção 121</h3>
+                <p class="cod-tecnico">Ref: SAF_121</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_122')">
+                <img src="img/temas/safari/SAF_122.png" alt="Tema SAF_122" loading="lazy">
+                <h3>Opção 122</h3>
+                <p class="cod-tecnico">Ref: SAF_122</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_123')">
+                <img src="img/temas/safari/SAF_123.jpg" alt="Tema SAF_123" loading="lazy">
+                <h3>Opção 123</h3>
+                <p class="cod-tecnico">Ref: SAF_123</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_124')">
+                <img src="img/temas/safari/SAF_124.jpg" alt="Tema SAF_124" loading="lazy">
+                <h3>Opção 124</h3>
+                <p class="cod-tecnico">Ref: SAF_124</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_125')">
+                <img src="img/temas/safari/SAF_125.jpg" alt="Tema SAF_125" loading="lazy">
+                <h3>Opção 125</h3>
+                <p class="cod-tecnico">Ref: SAF_125</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_126')">
+                <img src="img/temas/safari/SAF_126.jpg" alt="Tema SAF_126" loading="lazy">
+                <h3>Opção 126</h3>
+                <p class="cod-tecnico">Ref: SAF_126</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_127')">
+                <img src="img/temas/safari/SAF_127.jpg" alt="Tema SAF_127" loading="lazy">
+                <h3>Opção 127</h3>
+                <p class="cod-tecnico">Ref: SAF_127</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_128')">
+                <img src="img/temas/safari/SAF_128.jpg" alt="Tema SAF_128" loading="lazy">
+                <h3>Opção 128</h3>
+                <p class="cod-tecnico">Ref: SAF_128</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_129')">
+                <img src="img/temas/safari/SAF_129.png" alt="Tema SAF_129" loading="lazy">
+                <h3>Opção 129</h3>
+                <p class="cod-tecnico">Ref: SAF_129</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_130')">
+                <img src="img/temas/safari/SAF_130.jpg" alt="Tema SAF_130" loading="lazy">
+                <h3>Opção 130</h3>
+                <p class="cod-tecnico">Ref: SAF_130</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_131')">
+                <img src="img/temas/safari/SAF_131.jpg" alt="Tema SAF_131" loading="lazy">
+                <h3>Opção 131</h3>
+                <p class="cod-tecnico">Ref: SAF_131</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_132')">
+                <img src="img/temas/safari/SAF_132.jpg" alt="Tema SAF_132" loading="lazy">
+                <h3>Opção 132</h3>
+                <p class="cod-tecnico">Ref: SAF_132</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_133')">
+                <img src="img/temas/safari/SAF_133.jpg" alt="Tema SAF_133" loading="lazy">
+                <h3>Opção 133</h3>
+                <p class="cod-tecnico">Ref: SAF_133</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_134')">
+                <img src="img/temas/safari/SAF_134.png" alt="Tema SAF_134" loading="lazy">
+                <h3>Opção 134</h3>
+                <p class="cod-tecnico">Ref: SAF_134</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_135')">
+                <img src="img/temas/safari/SAF_135.png" alt="Tema SAF_135" loading="lazy">
+                <h3>Opção 135</h3>
+                <p class="cod-tecnico">Ref: SAF_135</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_136')">
+                <img src="img/temas/safari/SAF_136.png" alt="Tema SAF_136" loading="lazy">
+                <h3>Opção 136</h3>
+                <p class="cod-tecnico">Ref: SAF_136</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_137')">
+                <img src="img/temas/safari/SAF_137.png" alt="Tema SAF_137" loading="lazy">
+                <h3>Opção 137</h3>
+                <p class="cod-tecnico">Ref: SAF_137</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_138')">
+                <img src="img/temas/safari/SAF_138.png" alt="Tema SAF_138" loading="lazy">
+                <h3>Opção 138</h3>
+                <p class="cod-tecnico">Ref: SAF_138</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_139')">
+                <img src="img/temas/safari/SAF_139.png" alt="Tema SAF_139" loading="lazy">
+                <h3>Opção 139</h3>
+                <p class="cod-tecnico">Ref: SAF_139</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_140')">
+                <img src="img/temas/safari/SAF_140.png" alt="Tema SAF_140" loading="lazy">
+                <h3>Opção 140</h3>
+                <p class="cod-tecnico">Ref: SAF_140</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_141')">
+                <img src="img/temas/safari/SAF_141.png" alt="Tema SAF_141" loading="lazy">
+                <h3>Opção 141</h3>
+                <p class="cod-tecnico">Ref: SAF_141</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_142')">
+                <img src="img/temas/safari/SAF_142.png" alt="Tema SAF_142" loading="lazy">
+                <h3>Opção 142</h3>
+                <p class="cod-tecnico">Ref: SAF_142</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_143')">
+                <img src="img/temas/safari/SAF_143.png" alt="Tema SAF_143" loading="lazy">
+                <h3>Opção 143</h3>
+                <p class="cod-tecnico">Ref: SAF_143</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_144')">
+                <img src="img/temas/safari/SAF_144.png" alt="Tema SAF_144" loading="lazy">
+                <h3>Opção 144</h3>
+                <p class="cod-tecnico">Ref: SAF_144</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_145')">
+                <img src="img/temas/safari/SAF_145.png" alt="Tema SAF_145" loading="lazy">
+                <h3>Opção 145</h3>
+                <p class="cod-tecnico">Ref: SAF_145</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_146')">
+                <img src="img/temas/safari/SAF_146.png" alt="Tema SAF_146" loading="lazy">
+                <h3>Opção 146</h3>
+                <p class="cod-tecnico">Ref: SAF_146</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_147')">
+                <img src="img/temas/safari/SAF_147.png" alt="Tema SAF_147" loading="lazy">
+                <h3>Opção 147</h3>
+                <p class="cod-tecnico">Ref: SAF_147</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_148')">
+                <img src="img/temas/safari/SAF_148.jpg" alt="Tema SAF_148" loading="lazy">
+                <h3>Opção 148</h3>
+                <p class="cod-tecnico">Ref: SAF_148</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_149')">
+                <img src="img/temas/safari/SAF_149.jpg" alt="Tema SAF_149" loading="lazy">
+                <h3>Opção 149</h3>
+                <p class="cod-tecnico">Ref: SAF_149</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_150')">
+                <img src="img/temas/safari/SAF_150.jpg" alt="Tema SAF_150" loading="lazy">
+                <h3>Opção 150</h3>
+                <p class="cod-tecnico">Ref: SAF_150</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_151')">
+                <img src="img/temas/safari/SAF_151.png" alt="Tema SAF_151" loading="lazy">
+                <h3>Opção 151</h3>
+                <p class="cod-tecnico">Ref: SAF_151</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_152')">
+                <img src="img/temas/safari/SAF_152.jpg" alt="Tema SAF_152" loading="lazy">
+                <h3>Opção 152</h3>
+                <p class="cod-tecnico">Ref: SAF_152</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_153')">
+                <img src="img/temas/safari/SAF_153.jpg" alt="Tema SAF_153" loading="lazy">
+                <h3>Opção 153</h3>
+                <p class="cod-tecnico">Ref: SAF_153</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_154')">
+                <img src="img/temas/safari/SAF_154.jpg" alt="Tema SAF_154" loading="lazy">
+                <h3>Opção 154</h3>
+                <p class="cod-tecnico">Ref: SAF_154</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_155')">
+                <img src="img/temas/safari/SAF_155.jpg" alt="Tema SAF_155" loading="lazy">
+                <h3>Opção 155</h3>
+                <p class="cod-tecnico">Ref: SAF_155</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_156')">
+                <img src="img/temas/safari/SAF_156.jpg" alt="Tema SAF_156" loading="lazy">
+                <h3>Opção 156</h3>
+                <p class="cod-tecnico">Ref: SAF_156</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_157')">
+                <img src="img/temas/safari/SAF_157.jpg" alt="Tema SAF_157" loading="lazy">
+                <h3>Opção 157</h3>
+                <p class="cod-tecnico">Ref: SAF_157</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_158')">
+                <img src="img/temas/safari/SAF_158.jpg" alt="Tema SAF_158" loading="lazy">
+                <h3>Opção 158</h3>
+                <p class="cod-tecnico">Ref: SAF_158</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_159')">
+                <img src="img/temas/safari/SAF_159.jpg" alt="Tema SAF_159" loading="lazy">
+                <h3>Opção 159</h3>
+                <p class="cod-tecnico">Ref: SAF_159</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_160')">
+                <img src="img/temas/safari/SAF_160.jpg" alt="Tema SAF_160" loading="lazy">
+                <h3>Opção 160</h3>
+                <p class="cod-tecnico">Ref: SAF_160</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_161')">
+                <img src="img/temas/safari/SAF_161.jpg" alt="Tema SAF_161" loading="lazy">
+                <h3>Opção 161</h3>
+                <p class="cod-tecnico">Ref: SAF_161</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_162')">
+                <img src="img/temas/safari/SAF_162.png" alt="Tema SAF_162" loading="lazy">
+                <h3>Opção 162</h3>
+                <p class="cod-tecnico">Ref: SAF_162</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_163')">
+                <img src="img/temas/safari/SAF_163.jpg" alt="Tema SAF_163" loading="lazy">
+                <h3>Opção 163</h3>
+                <p class="cod-tecnico">Ref: SAF_163</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_164')">
+                <img src="img/temas/safari/SAF_164.jpg" alt="Tema SAF_164" loading="lazy">
+                <h3>Opção 164</h3>
+                <p class="cod-tecnico">Ref: SAF_164</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_165')">
+                <img src="img/temas/safari/SAF_165.jpg" alt="Tema SAF_165" loading="lazy">
+                <h3>Opção 165</h3>
+                <p class="cod-tecnico">Ref: SAF_165</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_166')">
+                <img src="img/temas/safari/SAF_166.jpg" alt="Tema SAF_166" loading="lazy">
+                <h3>Opção 166</h3>
+                <p class="cod-tecnico">Ref: SAF_166</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_167')">
+                <img src="img/temas/safari/SAF_167.jpg" alt="Tema SAF_167" loading="lazy">
+                <h3>Opção 167</h3>
+                <p class="cod-tecnico">Ref: SAF_167</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_168')">
+                <img src="img/temas/safari/SAF_168.jpg" alt="Tema SAF_168" loading="lazy">
+                <h3>Opção 168</h3>
+                <p class="cod-tecnico">Ref: SAF_168</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_169')">
+                <img src="img/temas/safari/SAF_169.jpg" alt="Tema SAF_169" loading="lazy">
+                <h3>Opção 169</h3>
+                <p class="cod-tecnico">Ref: SAF_169</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_170')">
+                <img src="img/temas/safari/SAF_170.jpg" alt="Tema SAF_170" loading="lazy">
+                <h3>Opção 170</h3>
+                <p class="cod-tecnico">Ref: SAF_170</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_171')">
+                <img src="img/temas/safari/SAF_171.jpg" alt="Tema SAF_171" loading="lazy">
+                <h3>Opção 171</h3>
+                <p class="cod-tecnico">Ref: SAF_171</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_172')">
+                <img src="img/temas/safari/SAF_172.jpg" alt="Tema SAF_172" loading="lazy">
+                <h3>Opção 172</h3>
+                <p class="cod-tecnico">Ref: SAF_172</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_173')">
+                <img src="img/temas/safari/SAF_173.png" alt="Tema SAF_173" loading="lazy">
+                <h3>Opção 173</h3>
+                <p class="cod-tecnico">Ref: SAF_173</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_174')">
+                <img src="img/temas/safari/SAF_174.jpg" alt="Tema SAF_174" loading="lazy">
+                <h3>Opção 174</h3>
+                <p class="cod-tecnico">Ref: SAF_174</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_175')">
+                <img src="img/temas/safari/SAF_175.jpg" alt="Tema SAF_175" loading="lazy">
+                <h3>Opção 175</h3>
+                <p class="cod-tecnico">Ref: SAF_175</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_176')">
+                <img src="img/temas/safari/SAF_176.jpg" alt="Tema SAF_176" loading="lazy">
+                <h3>Opção 176</h3>
+                <p class="cod-tecnico">Ref: SAF_176</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_177')">
+                <img src="img/temas/safari/SAF_177.jpg" alt="Tema SAF_177" loading="lazy">
+                <h3>Opção 177</h3>
+                <p class="cod-tecnico">Ref: SAF_177</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_178')">
+                <img src="img/temas/safari/SAF_178.jpg" alt="Tema SAF_178" loading="lazy">
+                <h3>Opção 178</h3>
+                <p class="cod-tecnico">Ref: SAF_178</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_179')">
+                <img src="img/temas/safari/SAF_179.jpg" alt="Tema SAF_179" loading="lazy">
+                <h3>Opção 179</h3>
+                <p class="cod-tecnico">Ref: SAF_179</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_180')">
+                <img src="img/temas/safari/SAF_180.jpg" alt="Tema SAF_180" loading="lazy">
+                <h3>Opção 180</h3>
+                <p class="cod-tecnico">Ref: SAF_180</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_181')">
+                <img src="img/temas/safari/SAF_181.jpg" alt="Tema SAF_181" loading="lazy">
+                <h3>Opção 181</h3>
+                <p class="cod-tecnico">Ref: SAF_181</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_182')">
+                <img src="img/temas/safari/SAF_182.jpg" alt="Tema SAF_182" loading="lazy">
+                <h3>Opção 182</h3>
+                <p class="cod-tecnico">Ref: SAF_182</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_183')">
+                <img src="img/temas/safari/SAF_183.jpg" alt="Tema SAF_183" loading="lazy">
+                <h3>Opção 183</h3>
+                <p class="cod-tecnico">Ref: SAF_183</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_184')">
+                <img src="img/temas/safari/SAF_184.png" alt="Tema SAF_184" loading="lazy">
+                <h3>Opção 184</h3>
+                <p class="cod-tecnico">Ref: SAF_184</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_185')">
+                <img src="img/temas/safari/SAF_185.jpg" alt="Tema SAF_185" loading="lazy">
+                <h3>Opção 185</h3>
+                <p class="cod-tecnico">Ref: SAF_185</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_186')">
+                <img src="img/temas/safari/SAF_186.jpg" alt="Tema SAF_186" loading="lazy">
+                <h3>Opção 186</h3>
+                <p class="cod-tecnico">Ref: SAF_186</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_187')">
+                <img src="img/temas/safari/SAF_187.jpg" alt="Tema SAF_187" loading="lazy">
+                <h3>Opção 187</h3>
+                <p class="cod-tecnico">Ref: SAF_187</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_188')">
+                <img src="img/temas/safari/SAF_188.jpg" alt="Tema SAF_188" loading="lazy">
+                <h3>Opção 188</h3>
+                <p class="cod-tecnico">Ref: SAF_188</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_189')">
+                <img src="img/temas/safari/SAF_189.jpg" alt="Tema SAF_189" loading="lazy">
+                <h3>Opção 189</h3>
+                <p class="cod-tecnico">Ref: SAF_189</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_190')">
+                <img src="img/temas/safari/SAF_190.jpg" alt="Tema SAF_190" loading="lazy">
+                <h3>Opção 190</h3>
+                <p class="cod-tecnico">Ref: SAF_190</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_191')">
+                <img src="img/temas/safari/SAF_191.jpg" alt="Tema SAF_191" loading="lazy">
+                <h3>Opção 191</h3>
+                <p class="cod-tecnico">Ref: SAF_191</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_192')">
+                <img src="img/temas/safari/SAF_192.jpg" alt="Tema SAF_192" loading="lazy">
+                <h3>Opção 192</h3>
+                <p class="cod-tecnico">Ref: SAF_192</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_193')">
+                <img src="img/temas/safari/SAF_193.jpg" alt="Tema SAF_193" loading="lazy">
+                <h3>Opção 193</h3>
+                <p class="cod-tecnico">Ref: SAF_193</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_194')">
+                <img src="img/temas/safari/SAF_194.jpg" alt="Tema SAF_194" loading="lazy">
+                <h3>Opção 194</h3>
+                <p class="cod-tecnico">Ref: SAF_194</p>
+            </div>
+            <div class="card" onclick="selecionarMatriz('SAF_195')">
+                <img src="img/temas/safari/SAF_195.jpg" alt="Tema SAF_195" loading="lazy">
+                <h3>Opção 195</h3>
+                <p class="cod-tecnico">Ref: SAF_195</p>
+            </div>

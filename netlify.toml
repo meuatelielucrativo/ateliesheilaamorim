@@ -1,0 +1,92 @@
+# ============================================================
+# Atelier Sheila Amorim - Netlify config
+# Documentação: https://docs.netlify.com/configure-builds/file-based-configuration/
+# ============================================================
+
+# Configuração geral de build (site é HTML estático, sem build step)
+[build]
+  publish = "."
+
+# ============================================================
+# HEADERS DE SEGURANÇA - aplicados em TODAS as páginas
+# ============================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Força HTTPS por 1 ano + aplica em subdomínios.
+    # IMPORTANTE: depois que habilitado, clientes que já visitaram o site
+    # vão recusar HTTP por 1 ano. Só tire isso depois de ter certeza que HTTPS
+    # funciona bem em todos os cenários.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+    # Impede que o site seja embutido em iframes de outros sites (clickjacking)
+    X-Frame-Options = "DENY"
+
+    # Impede o navegador de "adivinhar" tipos de arquivo
+    X-Content-Type-Options = "nosniff"
+
+    # Quanta informação de referência é enviada quando a cliente clica em links externos
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Desabilita APIs do navegador que o site não usa (câmera, mic, geolocalização, etc.)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+    # --------------------------------------------------------
+    # CONTENT SECURITY POLICY (CSP) - versão flexível
+    # Controla de onde cada tipo de recurso pode ser carregado.
+    # Se no futuro você adicionar Pixel do Meta, Google Ads, etc,
+    # vai precisar liberar os domínios aqui.
+    # --------------------------------------------------------
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;
+      connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;
+      media-src 'self';
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self' https://wa.me;
+      upgrade-insecure-requests
+      """
+
+# ============================================================
+# CACHE - quanto tempo o navegador guarda cada tipo de arquivo
+# ============================================================
+
+# HTML: cache curto (1 hora) - pra atualizações aparecerem rápido quando você faz deploy
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# CSS e JS: cache médio (1 dia)
+# Obs: ideal seria versionar (style.css?v=2) pra poder cachear por mais tempo,
+# mas isso é refatoração pra outro momento.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Imagens: cache longo (30 dias) - fotos de produto mudam pouco
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Vídeos dos produtos: cache longo (30 dias)
+[[headers]]
+  for = "*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "*.MP4"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

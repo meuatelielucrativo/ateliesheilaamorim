@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organização e Passeio | Atelier Sheila</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPB5QZX4X9"></script>
+</head>
+<body class="pagina-produtos">
+
+    <div class="header-produto">
+        <a href="../index.html" >⬅ Voltar ao Início</a>
+        <h1 style="color: #E8B41B; margin-top: 15px; font-family: 'Great Vibes'; font-size: 3rem;">Organização &amp; Passeio</h1>
+        <p>Praticidade e beleza para a mala do bebê.</p>
+    </div>
+
+    <div class="grid-container">
+        
+        <div class="card">
+            <div class="galeria-carrossel">
+                <video src="../img/produtos/TROCADOR-VIDEO-01.mp4" controls></video>
+                <video src="../img/produtos/TROCADOR-VIDEO-02.mp4" controls></video>
+            </div>
+            <span class="aviso-arraste">Dê play no vídeo</span>
+
+            <h3>Trocadores e Porta Documentos</h3>
+            <div class="descricao-tecnica">
+                <strong>Porta Documentos:</strong> material sintético, próprio para caderneta de vacinação infantil (SUS), com bolsos internos.<br>
+                Medidas: 27x21cm (fechado)<br>
+                <strong>Trocadores:</strong> forro impermeável e fechamento em velcro. Ideal para passeios cotidianos com o bebê.<br>
+                Medidas: 50x60cm<br>
+                *Todos com bordado incluso (nome + tema)
+            </div>
+            <div class="variacoes-container">
+                <button
+                    onclick="escolherProduto('Organização', 'Porta Documentos - R$ 160,00', 'tema')"
+                    class="btn-pill">
+                    Porta Docs R$ 160,00
+                </button>
+                <button
+                    onclick="escolherProduto('Organização', 'Trocador Portátil - R$ 120,00', 'tema')"
+                    class="btn-pill">
+                    Trocador R$ 120,00
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/NECESSAIRE-BABY-BASIC-01.JPEG" alt="Necessaire Baby Basic 01">
+                <img src="../img/produtos/NECESSAIRE-BABY-BASIC-02.JPEG" alt="Necessaire Baby Basic 02">
+                <img src="../img/produtos/NECESSAIRE-BABY-BASIC-03.JPEG" alt="Necessaire Baby Basic 03">
+                <img src="../img/produtos/NECESSAIRE-BABY-BASIC-04.JPEG" alt="Necessaire Baby Basic 04">
+                <img src="../img/produtos/NECESSAIRE-BABY-BASIC-05.JPEG" alt="Necessaire Baby Basic 05">
+            </div>
+            <span class="aviso-arraste">Arraste para ver detalhes</span>
+            <h3>Necessaires do Bebê</h3>
+            <div class="descricao-tecnica">
+                Modelos clássicos para fraldas, pomadas e guardar itens de higiene.
+            </div>
+            <div class="variacoes-container">
+                <button
+                    onclick="escolherProduto('Organização', 'Necessaire Porta-Fralda - R$ 95,00', 'tema')"
+                    class="btn-pill">
+                    Adicionar R$ 95,00
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="galeria-carrossel">
+                <img src="../img/produtos/ORGANIZADOR-01.JPEG" alt="ORGANIZADOR 01">
+                <img src="../img/produtos/ORGANIZADOR-011.JPEG" alt="ORGANIZADOR 011">
+                <img src="../img/produtos/ORGANIZADOR-02.jpeg" alt="ORGANIZADOR 02">
+                <img src="../img/produtos/ORGANIZADOR-021.jpeg" alt="ORGANIZADOR 021">
+                <img src="../img/produtos/ORGANIZADOR-03.jpeg" alt="ORGANIZADOR 03">
+                <img src="../img/produtos/ORGANIZADOR-031.jpeg" alt="ORGANIZADOR 031">
+                <img src="../img/produtos/ORGANIZADOR-04.jpeg" alt="ORGANIZADOR 04">
+                <img src="../img/produtos/ORGANIZADOR-05.jpeg" alt="ORGANIZADOR 05">
+                <img src="../img/produtos/ORGANIZADOR-06.jpeg" alt="ORGANIZADOR 06">
+                <img src="../img/produtos/ORGANIZADOR-07.jpeg" alt="ORGANIZADOR 07">
+            </div>
+            <span class="aviso-arraste">Arraste para ver detalhes</span>
+            <h3>Saquinhos/Organizadores</h3>
+            <div class="descricao-tecnica">
+                <strong>Saquinhos:</strong> em tecido com forro impermeável. Ideal para mochilas e viagens.<br>
+                Medidas: 30x40cm<br>
+                <strong>Organizadores:</strong> em plástico transparente, gramatura 40, fechamento em zíper. Ideal para saída de maternidade.<br>
+                Medidas: 30x35cm<br>
+                *Todos com bordado incluso (nome + tema)
+            </div>
+            <div class="variacoes-container">
+                <button
+                    onclick="escolherProduto('Organização', 'Saquinho - R$ 95,00', 'tema')"
+                    class="btn-pill">
+                    Saquinho R$ 95,00
+                </button>
+                <button
+                    onclick="escolherProduto('Organização', 'Organizador Transparente - R$ 75,00', 'tema')"
+                    class="btn-pill">
+                    Organizador R$ 75,00
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="floating-bar">
+        <div class="btn-trash" onclick="limparSacola()" title="Esvaziar Lista">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <div class="sacola-float" onclick="finalizarCompraZap()">
+            <i class="fab fa-whatsapp"></i><span>Minha Lista</span><div class="contador">0</div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
