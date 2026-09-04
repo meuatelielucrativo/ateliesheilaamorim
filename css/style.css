@@ -697,3 +697,50 @@ a {
     .wa-fab { padding: 12px; border-radius: 50%; }
     .wa-fab span { display: none; } /* só o ícone no mobile pequeno */
 }
+
+/* ---------- DEPOIMENTOS (grade de cards) ---------- */
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+.dep-item.full { grid-column: 1 / -1; }
+.dep-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.dep-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,0.10); }
+.dep-stars { color: var(--cor-dourado); font-size: 0.95rem; letter-spacing: 2px; }
+.dep-txt { color: #666; line-height: 1.6; font-size: 1rem; }
+.dep-user { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.dep-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--c, var(--cor-dourado)); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.15rem; flex-shrink: 0;
+}
+.dep-user strong { display: block; color: #333; font-size: 0.95rem; }
+.dep-user span { color: #999; font-size: 0.82rem; }
+/* card-citação em destaque (topo, largura total) */
+.dep-quote {
+    background: transparent; border: none; box-shadow: none;
+    align-items: center; text-align: center; gap: 14px; padding: 6px 20px 22px;
+}
+.dep-quote:hover { transform: none; box-shadow: none; }
+.dep-quote-ico { width: 48px; height: 36px; color: var(--cor-dourado); opacity: .45; }
+.dep-quote-txt {
+    font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 600; font-style: italic;
+    color: #4A4A4A; line-height: 1.4; max-width: 42ch;
+}
+.dep-quote-autor { color: #999; font-weight: 600; letter-spacing: .5px; }
