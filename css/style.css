@@ -698,49 +698,55 @@ a {
     .wa-fab span { display: none; } /* só o ícone no mobile pequeno */
 }
 
-/* ---------- DEPOIMENTOS (grade de cards) ---------- */
-.depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left;
+/* ---------- DEPOIMENTOS (mural de prints reais) ---------- */
+/* citação em destaque (lead-in) */
+.dep-pull { max-width: 620px; margin: 0 auto 34px; padding: 0 12px; }
+.dep-pull p {
+    font-size: clamp(1.15rem, 2.6vw, 1.5rem); font-weight: 600; font-style: italic;
+    color: #4A4A4A; line-height: 1.45; margin: 0 0 10px;
 }
-.dep-item.full { grid-column: 1 / -1; }
-.dep-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 14px;
-    padding: 26px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.dep-pull cite {
+    font-style: normal; font-weight: 700; letter-spacing: .3px;
+    color: var(--cor-dourado-txt, #9A6B0F); font-size: .9rem;
+}
+
+/* mural em colunas (alturas variadas = clima de feed real) */
+.mural-deps { max-width: 1040px; margin: 0 auto; column-count: 4; column-gap: 16px; }
+.mural-item { break-inside: avoid; margin: 0 0 16px; padding: 0; }
+.mural-thumb {
+    display: block; width: 100%; padding: 0; border: 0; background: none;
+    cursor: zoom-in; position: relative; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     transition: transform .3s ease, box-shadow .3s ease;
 }
-.dep-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,0.10); }
-.dep-stars { color: var(--cor-dourado); font-size: 0.95rem; letter-spacing: 2px; }
-.dep-txt { color: #666; line-height: 1.6; font-size: 1rem; }
-.dep-user { display: flex; align-items: center; gap: 12px; margin-top: auto; }
-.dep-avatar {
-    width: 46px; height: 46px; border-radius: 50%;
-    background: var(--c, var(--cor-dourado)); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 1.15rem; flex-shrink: 0;
+.mural-thumb:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.15); }
+.mural-thumb:focus-visible { outline: 3px solid var(--cor-dourado, #E8B41B); outline-offset: 2px; }
+.mural-thumb img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.mural-badge {
+    position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center;
+    font-size: .95rem; color: #4A4A4A; box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-.dep-user strong { display: block; color: #333; font-size: 0.95rem; }
-.dep-user span { color: #999; font-size: 0.82rem; }
-/* card-citação em destaque (topo, largura total) */
-.dep-quote {
-    background: transparent; border: none; box-shadow: none;
-    align-items: center; text-align: center; gap: 14px; padding: 6px 20px 22px;
+.mural-badge.ig { color: #C13584; }
+.mural-badge.wa { color: #25D366; }
+@media (max-width: 960px) { .mural-deps { column-count: 3; } }
+@media (max-width: 640px) { .mural-deps { column-count: 2; column-gap: 10px; } .mural-item { margin-bottom: 10px; } }
+
+/* lightbox */
+.mural-lb {
+    position: fixed; inset: 0; z-index: 9999; padding: 24px;
+    background: rgba(20,18,16,0.86); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center; animation: lbfade .2s ease;
 }
-.dep-quote:hover { transform: none; box-shadow: none; }
-.dep-quote-ico { width: 48px; height: 36px; color: var(--cor-dourado); opacity: .45; }
-.dep-quote-txt {
-    font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 600; font-style: italic;
-    color: #4A4A4A; line-height: 1.4; max-width: 42ch;
+.mural-lb[hidden] { display: none; }
+@keyframes lbfade { from { opacity: 0; } to { opacity: 1; } }
+.mural-lb figure { margin: 0; max-width: min(92vw, 520px); text-align: center; }
+.mural-lb img { max-width: 100%; max-height: 82vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.mural-lb figcaption { color: #f2ede6; font-size: .85rem; margin-top: 12px; line-height: 1.4; }
+.mural-lb-close {
+    position: absolute; top: 16px; right: 20px; width: 44px; height: 44px; border: 0; border-radius: 50%;
+    background: rgba(255,255,255,0.14); color: #fff; font-size: 1.9rem; line-height: 1; cursor: pointer;
+    transition: background .2s ease;
 }
-.dep-quote-autor { color: #999; font-weight: 600; letter-spacing: .5px; }
+.mural-lb-close:hover { background: rgba(255,255,255,0.28); }
+@media (prefers-reduced-motion: reduce) { .mural-lb { animation: none; } .mural-thumb { transition: none; } }
