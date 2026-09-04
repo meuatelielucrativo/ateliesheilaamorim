@@ -5,6 +5,7 @@
 :root {
     --cor-principal: #4A4A4A;
     --cor-dourado: #E8B41B;
+    --cor-dourado-txt: #9A6B0F; /* dourado mais fechado p/ TEXTO sobre claro (contraste AA) */
     --cor-fundo: #FAF9F6;
     --cor-branca: #FFFFFF;
     --cor-zap: #25D366;
@@ -88,9 +89,17 @@ a {
 }
 
 .card h3 {
-    color: var(--cor-dourado);
+    color: var(--cor-dourado-txt);
     margin-bottom: 10px;
     font-size: 1.2rem;
+}
+
+/* Ícone (SVG) ao lado do título da categoria */
+.cat-ico {
+    width: 1.15em; height: 1.15em;
+    vertical-align: -0.18em; margin-right: 7px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 
 .card p {
@@ -573,7 +582,7 @@ a {
 .hero-eyebrow {
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--cor-dourado);
+    color: var(--cor-dourado-txt);
     font-weight: 700;
     font-size: 0.8rem;
     margin-bottom: 12px;
@@ -661,4 +670,30 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
     .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- BOTÃO FLUTUANTE DE WHATSAPP (sempre visível) ---------- */
+.wa-fab {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--cor-zap);
+    color: #fff;
+    padding: 12px 20px 12px 16px;
+    border-radius: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    z-index: 9999;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.wa-fab i { font-size: 1.5rem; }
+.wa-fab:hover { filter: brightness(1.08); transform: scale(1.04); }
+
+@media (max-width: 480px) {
+    .wa-fab { padding: 12px; border-radius: 50%; }
+    .wa-fab span { display: none; } /* só o ícone no mobile pequeno */
 }
