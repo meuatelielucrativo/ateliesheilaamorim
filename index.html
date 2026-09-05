@@ -270,60 +270,56 @@
         <h2 class="reveal" style="color: #4A4A4A; font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 10px;">O que dizem as Mamães</h2>
         <p class="reveal" style="color: #666; margin-bottom: 40px;">Prints reais de clientes — direto do Instagram e do WhatsApp.</p>
 
-        <blockquote class="dep-pull reveal">
-            <p>"Me faltam adjetivos para elogiar… continue nos brindando com essas obras de arte."</p>
-            <cite>— Sérgio, via Instagram</cite>
-        </blockquote>
-
-        <div class="mural-deps">
-            <figure class="mural-item reveal" style="transition-delay:.04s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-1.webp" data-cap="Kit Isabel bordado — elogios nos comentários" aria-label="Ampliar depoimento do Instagram">
-                    <img src="img/depoimentos/dep-1.webp" width="468" height="712" loading="lazy" decoding="async" alt="Feedback real no Instagram: Kit Isabel bordado, com elogios nos comentários.">
-                    <span class="mural-badge ig"><i class="fab fa-instagram"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.10s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-2.webp" data-cap="Toalha do ursinho aviador — 'Como sempre, você arrasa'" aria-label="Ampliar depoimento do Instagram">
-                    <img src="img/depoimentos/dep-2.webp" width="417" height="691" loading="lazy" decoding="async" alt="Feedback real no Instagram sobre a toalha do ursinho aviador.">
-                    <span class="mural-badge ig"><i class="fab fa-instagram"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.16s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-3.webp" data-cap="Toalhas dos heróis do Gael — 'São perfeitos'" aria-label="Ampliar depoimento do Instagram">
-                    <img src="img/depoimentos/dep-3.webp" width="443" height="691" loading="lazy" decoding="async" alt="Feedback real no Instagram sobre as toalhas de heróis do Gael.">
-                    <span class="mural-badge ig"><i class="fab fa-instagram"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.22s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-4.webp" data-cap="Necessaire jeans — 'Linda demais, excelente qualidade'" aria-label="Ampliar depoimento do Instagram">
-                    <img src="img/depoimentos/dep-4.webp" width="430" height="700" loading="lazy" decoding="async" alt="Feedback real no Instagram sobre a necessaire de jeans.">
-                    <span class="mural-badge ig"><i class="fab fa-instagram"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.28s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-5.webp" data-cap="'Acabei de receber as toalhas. Trabalho impecável como sempre'" aria-label="Ampliar depoimento do WhatsApp">
-                    <img src="img/depoimentos/dep-5.webp" width="486" height="393" loading="lazy" decoding="async" alt="Feedback real no WhatsApp: 'Acabei de receber as toalhas, trabalho impecável'.">
-                    <span class="mural-badge wa"><i class="fab fa-whatsapp"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.34s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-6.webp" data-cap="Toalha do Gabriel — agradecimento da família" aria-label="Ampliar depoimento do Instagram">
-                    <img src="img/depoimentos/dep-6.webp" width="439" height="596" loading="lazy" decoding="async" alt="Feedback real no Instagram: agradecimento da família pela toalha do Gabriel.">
-                    <span class="mural-badge ig"><i class="fab fa-instagram"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.40s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-7.webp" data-cap="'Chegou! Tudo tão lindo, feito com tanto cuidado'" aria-label="Ampliar depoimento do WhatsApp">
-                    <img src="img/depoimentos/dep-7.webp" width="475" height="729" loading="lazy" decoding="async" alt="Feedback real no WhatsApp sobre o trocador slim bordado.">
-                    <span class="mural-badge wa"><i class="fab fa-whatsapp"></i></span>
-                </button>
-            </figure>
-            <figure class="mural-item reveal" style="transition-delay:.46s">
-                <button type="button" class="mural-thumb" data-full="img/depoimentos/dep-8.webp" data-cap="Momentos que não têm preço — respostas de clientes" aria-label="Ampliar depoimentos do Instagram">
-                    <img src="img/depoimentos/dep-8.webp" width="475" height="587" loading="lazy" decoding="async" alt="Feedback real no Instagram: respostas de clientes sobre o carinho do atelier.">
-                    <span class="mural-badge ig"><i class="fab fa-instagram"></i></span>
-                </button>
-            </figure>
+        <div class="ct reveal" id="ct" aria-roledescription="carrossel de depoimentos">
+            <div class="ct-grid">
+                <div class="ct-images" id="ctImages">
+                    <button type="button" class="ct-card" data-i="0" data-full="img/depoimentos/dep-1.webp" data-name="Cliente" data-desig="via Instagram" data-quote="Perfeito! Os detalhes seguem intactos — o coração fica cheio de orgulho." data-cap="Kit Isabel bordado — elogios reais no Instagram">
+                        <img src="img/depoimentos/dep-1.webp" width="468" height="712" loading="lazy" decoding="async" alt="Feedback real no Instagram: Kit Isabel bordado.">
+                        <span class="ct-badge ig"><i class="fab fa-instagram"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="1" data-full="img/depoimentos/dep-2.webp" data-name="Elisiane" data-desig="via Instagram" data-quote="Como sempre, você arrasa! ❤️" data-cap="Toalha do ursinho aviador — 'Como sempre, você arrasa'">
+                        <img src="img/depoimentos/dep-2.webp" width="417" height="691" loading="lazy" decoding="async" alt="Feedback real no Instagram sobre a toalha do ursinho aviador.">
+                        <span class="ct-badge ig"><i class="fab fa-instagram"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="2" data-full="img/depoimentos/dep-3.webp" data-name="Cliente" data-desig="via Instagram" data-quote="São perfeitos, sem sombra de dúvidas — uma qualidade maravilhosa!" data-cap="Toalhas dos heróis do Gael — 'São perfeitos'">
+                        <img src="img/depoimentos/dep-3.webp" width="443" height="691" loading="lazy" decoding="async" alt="Feedback real no Instagram sobre as toalhas de heróis do Gael.">
+                        <span class="ct-badge ig"><i class="fab fa-instagram"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="3" data-full="img/depoimentos/dep-4.webp" data-name="Carla" data-desig="via Instagram" data-quote="Linda demais, excelente qualidade! ❤️" data-cap="Necessaire jeans — 'Linda demais, excelente qualidade'">
+                        <img src="img/depoimentos/dep-4.webp" width="430" height="700" loading="lazy" decoding="async" alt="Feedback real no Instagram sobre a necessaire de jeans.">
+                        <span class="ct-badge ig"><i class="fab fa-instagram"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="4" data-full="img/depoimentos/dep-5.webp" data-name="Cliente" data-desig="via WhatsApp" data-quote="Acabei de receber as toalhas. Trabalho impecável como sempre, carinho em cada detalhe! 💙" data-cap="'Acabei de receber as toalhas. Trabalho impecável como sempre'">
+                        <img src="img/depoimentos/dep-5.webp" width="486" height="393" loading="lazy" decoding="async" alt="Feedback real no WhatsApp: 'Acabei de receber as toalhas, trabalho impecável'.">
+                        <span class="ct-badge wa"><i class="fab fa-whatsapp"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="5" data-full="img/depoimentos/dep-6.webp" data-name="Família do Gabriel" data-desig="via Instagram" data-quote="Que perfeição! Amei. Eu, meu papai e minha mamãe agradecemos. ❤️" data-cap="Toalha do Gabriel — agradecimento da família">
+                        <img src="img/depoimentos/dep-6.webp" width="439" height="596" loading="lazy" decoding="async" alt="Feedback real no Instagram: agradecimento da família pela toalha do Gabriel.">
+                        <span class="ct-badge ig"><i class="fab fa-instagram"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="6" data-full="img/depoimentos/dep-7.webp" data-name="Cliente" data-desig="via WhatsApp" data-quote="Chegou! Tudo tão lindo, feito com tanto cuidado. Amei!" data-cap="'Chegou! Tudo tão lindo, feito com tanto cuidado'">
+                        <img src="img/depoimentos/dep-7.webp" width="475" height="729" loading="lazy" decoding="async" alt="Feedback real no WhatsApp sobre o trocador slim bordado.">
+                        <span class="ct-badge wa"><i class="fab fa-whatsapp"></i></span>
+                    </button>
+                    <button type="button" class="ct-card" data-i="7" data-full="img/depoimentos/dep-8.webp" data-name="Cliente" data-desig="via Instagram" data-quote="Adoro quando você posta os vídeos do ateliê — é muito bonito!" data-cap="Momentos que não têm preço — respostas de clientes">
+                        <img src="img/depoimentos/dep-8.webp" width="475" height="587" loading="lazy" decoding="async" alt="Feedback real no Instagram: respostas de clientes sobre o carinho do atelier.">
+                        <span class="ct-badge ig"><i class="fab fa-instagram"></i></span>
+                    </button>
+                </div>
+                <div class="ct-content">
+                    <div aria-live="polite">
+                        <h3 class="ct-name" id="ctName"></h3>
+                        <p class="ct-desig" id="ctDesig"></p>
+                        <p class="ct-quote" id="ctQuote"></p>
+                    </div>
+                    <div class="ct-arrows">
+                        <button type="button" class="ct-arrow" id="ctPrev" aria-label="Depoimento anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="ct-arrow" id="ctNext" aria-label="Próximo depoimento"><i class="fas fa-chevron-right"></i></button>
+                        <span class="ct-count"><span id="ctIdx">1</span> / 8</span>
+                        <span class="ct-hint">Toque na foto para ampliar</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="mural-lb" id="muralLb" hidden>
@@ -335,14 +331,64 @@
         </div>
         <script>
         (function(){
-            var lb=document.getElementById('muralLb');if(!lb)return;
-            var img=document.getElementById('muralLbImg'),cap=document.getElementById('muralLbCap'),closeBtn=lb.querySelector('.mural-lb-close');
-            function open(src,c){img.src=src;img.alt=c||'';cap.textContent=c||'';lb.hidden=false;document.body.style.overflow='hidden';closeBtn.focus();}
-            function close(){lb.hidden=true;img.src='';document.body.style.overflow='';}
-            document.querySelectorAll('.mural-thumb').forEach(function(b){b.addEventListener('click',function(){open(b.dataset.full,b.dataset.cap);});});
-            closeBtn.addEventListener('click',close);
-            lb.addEventListener('click',function(e){if(e.target===lb)close();});
-            document.addEventListener('keydown',function(e){if(!lb.hidden&&e.key==='Escape')close();});
+            var root=document.getElementById('ct'); if(!root) return;
+            var cards=[].slice.call(root.querySelectorAll('.ct-card'));
+            var wrap=document.getElementById('ctImages');
+            var nameEl=document.getElementById('ctName'),desigEl=document.getElementById('ctDesig'),quoteEl=document.getElementById('ctQuote'),idxEl=document.getElementById('ctIdx');
+            var N=cards.length, active=0, timer=null;
+            var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            // tempos preservados da referência (tabela: giro 800ms premium; blur 220ms, stagger 25ms; autoplay 5s)
+            var TRANS=reduce?'opacity .25s linear':'all .8s cubic-bezier(.4,2,.3,1)';
+            function gap(){ var w=wrap.offsetWidth||360; return Math.max(42,Math.min(84,w*0.16)); }
+            function layout(){
+                var g=gap(), stick=g*0.55;
+                cards.forEach(function(card,i){
+                    var s=card.style; s.transition=TRANS;
+                    var isA=i===active, isL=(active-1+N)%N===i, isR=(active+1)%N===i;
+                    if(isA){ s.zIndex=3; s.opacity=1; s.pointerEvents='auto'; s.transform='translateX(0) translateY(0) scale(1) rotateY(0deg)'; card.classList.add('is-active'); card.tabIndex=0; card.setAttribute('aria-hidden','false'); }
+                    else if(isL){ s.zIndex=2; s.opacity=1; s.pointerEvents='auto'; s.transform='translateX(-'+g+'px) translateY(-'+stick+'px) scale(.85) rotateY(15deg)'; card.classList.remove('is-active'); card.tabIndex=-1; card.setAttribute('aria-hidden','true'); }
+                    else if(isR){ s.zIndex=2; s.opacity=1; s.pointerEvents='auto'; s.transform='translateX('+g+'px) translateY(-'+stick+'px) scale(.85) rotateY(-15deg)'; card.classList.remove('is-active'); card.tabIndex=-1; card.setAttribute('aria-hidden','true'); }
+                    else { s.zIndex=1; s.opacity=0; s.pointerEvents='none'; s.transform='translateX(0) scale(.7)'; card.classList.remove('is-active'); card.tabIndex=-1; card.setAttribute('aria-hidden','true'); }
+                });
+            }
+            function renderText(){
+                var c=cards[active];
+                nameEl.textContent=c.dataset.name; desigEl.textContent=c.dataset.desig; if(idxEl) idxEl.textContent=(active+1);
+                var words=(c.dataset.quote||'').split(' ');
+                quoteEl.classList.remove('in');
+                quoteEl.innerHTML=words.map(function(w,i){ return '<span class="ct-word" style="transition-delay:'+(reduce?0:(0.025*i))+'s">'+w+'&nbsp;</span>'; }).join('');
+                void quoteEl.offsetWidth; // commit do estado inicial (blur) p/ a transição rodar
+                requestAnimationFrame(function(){ quoteEl.classList.add('in'); });
+                setTimeout(function(){ quoteEl.classList.add('in'); }, 260); // fallback: rAF pausa em aba de fundo
+            }
+            function go(n){ active=(n+N)%N; layout(); renderText(); }
+            function next(){ go(active+1); } function prev(){ go(active-1); }
+            function startAP(){ if(reduce) return; stopAP(); timer=setInterval(next,5000); }
+            function stopAP(){ if(timer){ clearInterval(timer); timer=null; } }
+            function restart(){ stopAP(); startAP(); }
+            document.getElementById('ctNext').addEventListener('click',function(){ next(); restart(); });
+            document.getElementById('ctPrev').addEventListener('click',function(){ prev(); restart(); });
+            cards.forEach(function(card,i){
+                card.addEventListener('click',function(){
+                    if(i===active){ openLB(card.dataset.full,card.dataset.cap); }
+                    else if((active+1)%N===i){ next(); restart(); }
+                    else if((active-1+N)%N===i){ prev(); restart(); }
+                });
+            });
+            root.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'){ prev(); restart(); } else if(e.key==='ArrowRight'){ next(); restart(); } });
+            root.addEventListener('mouseenter',stopAP); root.addEventListener('mouseleave',startAP);
+            var sx=null;
+            wrap.addEventListener('touchstart',function(e){ sx=e.touches[0].clientX; },{passive:true});
+            wrap.addEventListener('touchend',function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40){ if(dx<0) next(); else prev(); restart(); } sx=null; });
+            var rz; window.addEventListener('resize',function(){ clearTimeout(rz); rz=setTimeout(layout,120); });
+            // lightbox (reaproveitado)
+            var lb=document.getElementById('muralLb'),lbImg=document.getElementById('muralLbImg'),lbCap=document.getElementById('muralLbCap'),lbClose=lb.querySelector('.mural-lb-close');
+            function openLB(src,c){ lbImg.src=src; lbImg.alt=c||''; lbCap.textContent=c||''; lb.hidden=false; document.body.style.overflow='hidden'; stopAP(); lbClose.focus(); }
+            function closeLB(){ lb.hidden=true; lbImg.src=''; document.body.style.overflow=''; startAP(); }
+            lbClose.addEventListener('click',closeLB);
+            lb.addEventListener('click',function(e){ if(e.target===lb) closeLB(); });
+            document.addEventListener('keydown',function(e){ if(!lb.hidden&&e.key==='Escape') closeLB(); });
+            layout(); renderText(); startAP();
         })();
         </script>
 
