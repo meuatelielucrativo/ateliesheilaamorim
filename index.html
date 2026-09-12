@@ -19,8 +19,8 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"LocalBusiness","name":"Atelier Sheila Amorim","description":"Enxoval de bebê personalizado e bordado.","image":"https://ateliersheilaamorim.com.br/img/sheila.jpg","url":"https://ateliersheilaamorim.com.br/","telephone":"+5522988241470","priceRange":"$$","areaServed":["BR","US","PT"],"sameAs":["https://instagram.com/ateliersheilaamorim","https://wa.me/5522988241470"]}
     </script>
-    <link rel="stylesheet" href="css/style.css?v=apple1">
-    <link rel="stylesheet" href="css/apple.css?v=apple1">
+    <link rel="stylesheet" href="css/style.css?v=apple2">
+    <link rel="stylesheet" href="css/apple.css?v=apple2">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google tag (gtag.js) -->
@@ -45,12 +45,24 @@
         </div>
     </nav>
 
-    <h1 class="sr-only" style="position:absolute;left:-9999px">Atelier Sheila Amorim: enxoval de bebê personalizado e bordado</h1>
-
     <main class="tiles">
 
+        <!-- Hero "corredor": porte vanilla do ImageStreamHero (21st.dev) -->
+        <section class="ish" data-stream-hero data-cards="8" data-speed="26" data-axis="55" data-images='["img/stream/s-01.webp","img/stream/s-02.webp","img/stream/s-03.webp","img/stream/s-04.webp","img/stream/s-05.webp","img/stream/s-06.webp","img/stream/s-07.webp","img/stream/s-08.webp","img/stream/s-09.webp","img/stream/s-10.webp","img/stream/s-11.webp","img/stream/s-12.webp"]' aria-labelledby="h0">
+            <div class="ish-content">
+                <h1 id="h0">O enxoval do seu bebê, <em class="hl">bordado</em> com o nome.</h1>
+                <div class="ish-bottom">
+                    <p>Toalhas, mantas, fraldas e naninhas feitas sob encomenda. Você escolhe o tema, o bordado sai da máquina ponto por ponto.</p>
+                    <div class="tile-links">
+                        <a href="#vitrines">Ver as vitrines ›</a>
+                        <a class="zap" href="https://wa.me/5522988241470?text=Oi%20Sheila!%20Vim%20pelo%20site%20e%20quero%20encomendar%20um%20enxoval%20personalizado." target="_blank" rel="noopener" data-zap="hero">Encomendar ›</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Vitrine 1: produto bandeira -->
-        <section class="tile" aria-labelledby="t1">
+        <section class="tile" id="vitrines" aria-labelledby="t1">
             <div class="tile-name">Toalha Fralda</div>
             <h2 id="t1">O primeiro banho merece o nome bordado.</h2>
             <p class="tile-sub">Capuz tradicional, felpa de alta absorção e o bordado com tema e nome já incluídos.</p>
@@ -65,12 +77,38 @@
         <!-- Vitrine 2: manifesto (só texto) -->
         <section class="tile dark manifesto" aria-labelledby="t2">
             <div class="tile-name">Bordado eletrônico</div>
-            <h2 id="t2">Cada peça sai da máquina <span class="sig">ponto por ponto</span>, com o nome que você escolher.</h2>
+            <h2 id="t2">Cada peça sai da máquina <em class="hl">ponto por ponto</em>, com o nome que você escolher.</h2>
             <p class="tile-sub">Feito sob encomenda, em 20 a 30 dias úteis. Você monta a lista, escolhe o tema entre 16 coleções e finaliza no WhatsApp.</p>
             <div class="tile-links">
                 <a href="ajuda.html#como-pedir">Como funciona ›</a>
                 <a href="temas.html">Ver os temas ›</a>
             </div>
+        </section>
+
+        <!-- Faixa de temas: porte vanilla da galeria acordeão (21st.dev) -->
+        <section class="tile cream tile-temas" aria-labelledby="t9">
+            <div class="tile-name">16 coleções de temas</div>
+            <h3 id="t9">Escolha o tema. O nome vai junto.</h3>
+            <p class="tile-sub">Passe o mouse para abrir cada coleção. Toque para ver de perto.</p>
+            <div class="tstrip" id="tstrip" role="list" data-default="14">
+                <button type="button" class="tstrip-item" role="listitem" data-title="Abelhinhas" data-desc="5 desenhos nesta coleção" data-img="img/temas-mini/abelhinhas.webp" aria-label="Tema Abelhinhas, 5 desenhos"><img src="img/temas-mini/abelhinhas.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Abelhinhas<small>5 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Astronautas" data-desc="16 desenhos nesta coleção" data-img="img/temas-mini/astronautas.webp" aria-label="Tema Astronautas, 16 desenhos"><img src="img/temas-mini/astronautas.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Astronautas<small>16 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Aviador" data-desc="98 desenhos nesta coleção" data-img="img/temas-mini/aviador.webp" aria-label="Tema Aviador, 98 desenhos"><img src="img/temas-mini/aviador.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Aviador<small>98 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Borboletas e florais" data-desc="81 desenhos nesta coleção" data-img="img/temas-mini/borboletas-e-florais.webp" aria-label="Tema Borboletas e florais, 81 desenhos"><img src="img/temas-mini/borboletas-e-florais.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Borboletas e florais<small>81 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Bosque" data-desc="41 desenhos nesta coleção" data-img="img/temas-mini/bosque.webp" aria-label="Tema Bosque, 41 desenhos"><img src="img/temas-mini/bosque.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Bosque<small>41 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Brasão" data-desc="69 desenhos nesta coleção" data-img="img/temas-mini/brasao.webp" aria-label="Tema Brasão, 69 desenhos"><img src="img/temas-mini/brasao.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Brasão<small>69 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Carros" data-desc="36 desenhos nesta coleção" data-img="img/temas-mini/carros.webp" aria-label="Tema Carros, 36 desenhos"><img src="img/temas-mini/carros.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Carros<small>36 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Cavalinhos" data-desc="47 desenhos nesta coleção" data-img="img/temas-mini/cavalinhos.webp" aria-label="Tema Cavalinhos, 47 desenhos"><img src="img/temas-mini/cavalinhos.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Cavalinhos<small>47 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Chuva de amor" data-desc="76 desenhos nesta coleção" data-img="img/temas-mini/chuva-de-amor.webp" aria-label="Tema Chuva de amor, 76 desenhos"><img src="img/temas-mini/chuva-de-amor.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Chuva de amor<small>76 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Dinossauros" data-desc="30 desenhos nesta coleção" data-img="img/temas-mini/dinossauros.webp" aria-label="Tema Dinossauros, 30 desenhos"><img src="img/temas-mini/dinossauros.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Dinossauros<small>30 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Fazendinha" data-desc="30 desenhos nesta coleção" data-img="img/temas-mini/fazendinha.webp" aria-label="Tema Fazendinha, 30 desenhos"><img src="img/temas-mini/fazendinha.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Fazendinha<small>30 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Fundo do mar" data-desc="44 desenhos nesta coleção" data-img="img/temas-mini/fundo-do-mar.webp" aria-label="Tema Fundo do mar, 44 desenhos"><img src="img/temas-mini/fundo-do-mar.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Fundo do mar<small>44 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Meninas e bonecas" data-desc="61 desenhos nesta coleção" data-img="img/temas-mini/meninas-e-bonecas.webp" aria-label="Tema Meninas e bonecas, 61 desenhos"><img src="img/temas-mini/meninas-e-bonecas.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Meninas e bonecas<small>61 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Meninos" data-desc="41 desenhos nesta coleção" data-img="img/temas-mini/meninos.webp" aria-label="Tema Meninos, 41 desenhos"><img src="img/temas-mini/meninos.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Meninos<small>41 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Safári" data-desc="195 desenhos nesta coleção" data-img="img/temas-mini/safari.webp" aria-label="Tema Safári, 195 desenhos"><img src="img/temas-mini/safari.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Safári<small>195 desenhos</small></span></button>
+                <button type="button" class="tstrip-item" role="listitem" data-title="Ursos" data-desc="52 desenhos nesta coleção" data-img="img/temas-mini/ursos.webp" aria-label="Tema Ursos, 52 desenhos"><img src="img/temas-mini/ursos.webp" alt="" loading="lazy" decoding="async"><span class="lbl">Ursos<small>52 desenhos</small></span></button>
+            </div>
+            <div class="tile-links"><a href="temas.html">Ver as 16 coleções completas ›</a></div>
         </section>
 
         <!-- Vitrine 3 -->
@@ -208,6 +246,12 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=apple1"></script>
+    <div class="mural-lb" id="temaLb" hidden>
+        <button type="button" class="mural-lb-close" aria-label="Fechar">&times;</button>
+        <figure><img id="temaLbImg" src="" alt=""><figcaption class="tlb-cap"><b id="temaLbTit"></b><span id="temaLbDesc"></span><br><a href="temas.html" id="temaLbLink">Escolher este tema ›</a></figcaption></figure>
+    </div>
+
+    <script src="js/script.js?v=apple2"></script>
+    <script src="js/apple-ui.js?v=apple2"></script>
 </body>
 </html>
