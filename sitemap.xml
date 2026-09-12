@@ -60,4 +60,34 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Pagina-produto em detalhe (bandeira) -->
+  <url>
+    <loc>https://ateliersheilaamorim.com.br/paginas-produtos/toalha-fralda.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Paginas institucionais -->
+  <url>
+    <loc>https://ateliersheilaamorim.com.br/ajuda.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://ateliersheilaamorim.com.br/atelier.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://ateliersheilaamorim.com.br/feedbacks.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

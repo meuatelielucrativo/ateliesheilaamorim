@@ -14,8 +14,9 @@
     <meta property="og:url" content="https://ateliersheilaamorim.com.br/temas.html">
     <meta property="og:image" content="https://ateliersheilaamorim.com.br/img/CAT-ACESSORIOS.jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=apple1">
+    <link rel="stylesheet" href="css/apple.css?v=apple1">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { background-color: #faf9f6; scroll-behavior: smooth; }
@@ -96,11 +97,31 @@
             .tabs { gap: 6px; }
             .header-temas h2 { font-size: 2rem; }
         }
+            body.apple .barra-tema-topo { top: var(--ap-nav-h); }
+        body.apple .tabs-container { top: var(--ap-nav-h); }
+        body.apple .header-temas { background: transparent; padding-top: 28px; }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPB5QZX4X9"></script>
 </head>
-<body>
+<body class="apple">
+    <nav class="gnav" aria-label="Navegação principal">
+        <div class="gnav-in">
+            <a class="gnav-logo" href="index.html" aria-label="Atelier Sheila Amorim, início">Sheila Amorim</a>
+            <ul class="gnav-links">
+                <li><a href="paginas-produtos/banho.html">Banho</a></li>
+                <li><a href="paginas-produtos/soninho.html">Soninho</a></li>
+                <li><a href="paginas-produtos/fraldas.html">Fraldas</a></li>
+                <li><a href="paginas-produtos/acessorios.html">Acessórios</a></li>
+                <li><a href="paginas-produtos/organizacao.html">Organização</a></li>
+                <li><a href="paginas-produtos/escolar.html">Escola</a></li>
+                <li><a href="temas.html" aria-current="page">Temas</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+            </ul>
+            <a class="gnav-cta" href="https://wa.me/5522988241470?text=Oi%20Sheila!%20Vim%20pelo%20site%20e%20quero%20encomendar%20um%20enxoval%20personalizado." target="_blank" rel="noopener" data-zap="nav"><i class="fab fa-whatsapp"></i> Encomendar</a>
+        </div>
+    </nav>
+
 
     <button onclick="subirTopo()" id="btn-topo" title="Voltar ao Menu">
         <i class="fas fa-arrow-up"></i>
@@ -144,6 +165,25 @@
         </div>
     </div>
 
+        <footer class="gfoot">
+        <div class="gfoot-in">
+            <div class="gfoot-cols">
+                <div><h4>Comprar</h4><ul>
+                    <li><a href="paginas-produtos/banho.html">Banho</a></li><li><a href="paginas-produtos/soninho.html">Soninho</a></li><li><a href="paginas-produtos/fraldas.html">Fraldas</a></li>
+                    <li><a href="paginas-produtos/acessorios.html">Acessórios</a></li><li><a href="paginas-produtos/organizacao.html">Organização</a></li><li><a href="paginas-produtos/escolar.html">Volta às aulas</a></li></ul></div>
+                <div><h4>Personalize</h4><ul>
+                    <li><a href="temas.html">Galeria de temas</a></li><li><a href="ajuda.html#como-pedir">Como pedir</a></li><li><a href="paginas-produtos/toalha-fralda.html">Toalha Fralda em detalhe</a></li></ul></div>
+                <div><h4>Ajuda</h4><ul>
+                    <li><a href="ajuda.html#prazos">Prazos</a></li><li><a href="ajuda.html#pagamento">Pagamento</a></li><li><a href="ajuda.html#envio">Envio</a></li><li><a href="ajuda.html#faq">Dúvidas frequentes</a></li></ul></div>
+                <div><h4>Atelier</h4><ul>
+                    <li><a href="atelier.html">Nossa história</a></li><li><a href="feedbacks.html">Feedbacks</a></li>
+                    <li><a href="https://instagram.com/ateliersheilaamorim" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://wa.me/5522988241470" target="_blank" rel="noopener" data-zap="footer">WhatsApp (22) 98824-1470</a></li></ul></div>
+            </div>
+            <div class="gfoot-bottom"><span class="sig">Sheila Amorim</span><span>© 2026 Atelier Sheila Amorim.</span></div>
+        </div>
+    </footer>
+
     <!-- Barra flutuante -->
     <div class="floating-bar">
         <div class="btn-trash" onclick="limparSacola()" title="Esvaziar Lista">
@@ -157,6 +197,6 @@
     </div>
 
     <script src="js/dados-temas.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=apple1"></script>
 </body>
 </html>
