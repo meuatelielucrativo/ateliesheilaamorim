@@ -46,13 +46,16 @@
 
     <!-- 00 · Hero -->
     <header class="pd-hero" id="hero">
-        <!-- Fundo estático: o vídeo disponível tem marca d'água de terceiro, não serve de capa -->
-        <img class="pd-bg bg" src="../img/produtos/TOALHA-FRALDA-01.jpeg" alt="" fetchpriority="high" aria-hidden="true">
         <div class="pd-hero-txt">
             <h1>Toalha Fralda.</h1>
             <p>O primeiro banho merece o nome bordado.</p>
             <div class="pd-price">R$ 149,90 · já inclui personalização e bordado</div>
         </div>
+        <!-- Foto enquadrada, não de fundo: como fundo recortado via-se só um pedaço da peça.
+             Usa uma foto diferente da do capítulo 01, que vem logo abaixo. -->
+        <figure class="pd-hero-shot">
+            <img src="../img/produtos/TOALHA-FRALDA-07.jpeg" alt="Toalha fralda com barrado xadrez rosa e bordado de girafa e elefante no banho" fetchpriority="high">
+        </figure>
         <div class="pd-scroll-hint">role para conhecer</div>
     </header>
 
@@ -227,9 +230,9 @@
         var mm = gsap.matchMedia();
 
         mm.add('(prefers-reduced-motion: no-preference)', function () {
-            // hero: leve parallax do vídeo/poster (só transform)
-            gsap.to('.pd-hero .pd-bg', {
-                scale: 1.12, yPercent: 8, ease: 'none',
+            // hero: a foto enquadrada afasta de leve enquanto a página rola
+            gsap.fromTo('.pd-hero-shot img', { scale: 1.06 }, {
+                scale: 1, ease: 'none',
                 scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
             });
 
