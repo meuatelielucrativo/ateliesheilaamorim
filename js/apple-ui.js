@@ -65,38 +65,4 @@
     if (window.ResizeObserver) { new ResizeObserver(function () { clearTimeout(rz); rz = setTimeout(build, 150); }).observe(root); }
   }
 
-  /* ---------------- 2. FAIXA DE TEMAS ---------------- */
-  var strip = document.getElementById('tstrip');
-  if (strip) {
-    var items = [].slice.call(strip.querySelectorAll('.tstrip-item'));
-    var cur = +strip.dataset.default || 0;
-    var touchMode = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
-    function setOn(i) {
-      cur = i;
-      items.forEach(function (el, k) { el.classList.toggle('is-on', k === i); });
-    }
-    if (!touchMode) setOn(cur);
-    items.forEach(function (el, i) {
-      el.addEventListener('mouseenter', function () { if (!touchMode) setOn(i); });
-      el.addEventListener('focus', function () { if (!touchMode) setOn(i); });
-      el.addEventListener('click', function () { openTema(el); });
-    });
-
-    var lb = document.getElementById('temaLb');
-    if (lb) {
-      var lbImg = document.getElementById('temaLbImg'), lbTit = document.getElementById('temaLbTit'),
-          lbDesc = document.getElementById('temaLbDesc'), lbClose = lb.querySelector('.mural-lb-close');
-      var openTema = function (el) {
-        lbImg.src = el.dataset.img; lbImg.alt = 'Tema ' + el.dataset.title;
-        lbTit.textContent = el.dataset.title; lbDesc.textContent = el.dataset.desc || '';
-        lb.hidden = false; document.body.style.overflow = 'hidden'; lbClose.focus();
-      };
-      var closeTema = function () { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; };
-      lbClose.addEventListener('click', closeTema);
-      lb.addEventListener('click', function (e) { if (e.target === lb) closeTema(); });
-      document.addEventListener('keydown', function (e) { if (!lb.hidden && e.key === 'Escape') closeTema(); });
-    } else {
-      var openTema = function () { window.location.href = 'temas.html'; };
-    }
-  }
 })();

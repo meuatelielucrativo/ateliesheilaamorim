@@ -232,26 +232,30 @@ body.apple .js .reveal { transform: translateY(16px); }
 .ish {
   position: relative; overflow: hidden; container-type: inline-size;
   background: var(--ap-cream); border: 1px solid var(--ap-line); border-radius: 22px;
-  min-height: clamp(440px, 60vw, 620px);
+  min-height: clamp(500px, 64vw, 680px);
 }
 .ish-stage { position: absolute; inset: 0; pointer-events: none; }
 .ish-layer { position: absolute; inset: 0; transform-style: preserve-3d; }
 .ish-card { position: absolute; overflow: hidden; backface-visibility: hidden; will-change: transform; box-shadow: 0 10px 30px rgba(0,0,0,.14); background: #EFEBE3; }
 .ish-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 /* véus no topo e na base: o texto nunca disputa com um card passando */
-.ish::before, .ish::after { content: ""; position: absolute; left: 0; right: 0; height: 40%; z-index: 1; pointer-events: none; }
-.ish::before { top: 0; background: linear-gradient(to bottom, var(--ap-cream) 28%, rgba(250,249,246,0)); }
-.ish::after { bottom: 0; background: linear-gradient(to top, var(--ap-cream) 28%, rgba(250,249,246,0)); }
+.ish::before, .ish::after { content: ""; position: absolute; left: 0; right: 0; height: 50%; z-index: 1; pointer-events: none; }
+.ish::before { top: 0; background: linear-gradient(to bottom, var(--ap-cream) 62%, rgba(250,249,246,0)); }
+.ish::after { bottom: 0; background: linear-gradient(to top, var(--ap-cream) 58%, rgba(250,249,246,0)); }
 .ish-content {
-  position: relative; z-index: 2; min-height: clamp(440px, 60vw, 620px);
+  position: relative; z-index: 2; min-height: clamp(500px, 64vw, 680px);
   display: flex; flex-direction: column; justify-content: space-between; align-items: center;
   text-align: center; padding: clamp(36px, 6vw, 64px) 24px;
 }
-.ish-content h1 { font-weight: 900; letter-spacing: -.03em; line-height: 1.02; font-size: clamp(2rem, 5.4vw, 4rem); margin: 0; max-width: 16ch; text-wrap: balance; color: var(--ap-ink); }
+.ish-content h1 { font-weight: 900; letter-spacing: -.03em; line-height: 1.04; font-size: clamp(1.85rem, 4.4vw, 3.3rem); margin: 0; max-width: 24ch; text-wrap: balance; color: var(--ap-ink); }
 .ish-content h1 .hl { color: var(--ap-gold-txt); font-style: normal; }
 .ish-bottom { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .ish-bottom p { margin: 0; max-width: 46ch; color: var(--ap-ink-2); font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.5; }
 .ish.no-stream { background: var(--ap-white); }
+@media (max-width: 640px) {
+  .ish::before { height: 46%; background: linear-gradient(to bottom, var(--ap-cream) 70%, rgba(250,249,246,0)); }
+  .ish::after  { height: 60%; background: linear-gradient(to top, var(--ap-cream) 62%, rgba(250,249,246,0)); }
+}
 @media (prefers-reduced-motion: reduce) { .ish-card { animation-play-state: paused !important; } }
 
 /* ---------- FAIXA DE TEMAS (porte vanilla da galeria acordeão) ---------- */
@@ -283,3 +287,106 @@ body.apple .js .reveal { transform: translateY(16px); }
 .mural-lb .tlb-cap { color: #f2ede6; }
 .mural-lb .tlb-cap b { display: block; font-size: 1.1rem; }
 .mural-lb .tlb-cap a { display: inline-block; margin-top: 10px; color: var(--ap-gold); font-weight: 800; }
+
+/* ==========================================================
+   CAMADA CRO (v4) — barra fixa mobile, micro-interação,
+   vitrine de temas estática e correção de hover em toque.
+   ========================================================== */
+
+/* ---------- micro-texto de quebra de objeção (hero) ---------- */
+.micro-obj { margin: 10px 0 0; font-size: .92rem; color: var(--ap-muted); display: block; }
+.micro-obj::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ap-zap); margin-right: 8px; vertical-align: middle;
+}
+
+/* ---------- nota de preço nas páginas de linha ---------- */
+.preco-nota {
+  max-width: 1080px; margin: 4px auto 40px; padding: 0 20px;
+  text-align: center; font-size: .92rem; color: var(--ap-muted); line-height: 1.5;
+}
+
+/* ---------- VITRINE DE TEMAS (estática, sem hover) ---------- */
+.tshow {
+  display: grid; gap: 10px; width: 100%; max-width: 1080px; margin: 22px auto 14px;
+  grid-template-columns: repeat(8, 1fr);
+}
+@media (max-width: 900px) { .tshow { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 520px) { .tshow { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
+.tshow-item { margin: 0; background: var(--ap-white); border: 1px solid var(--ap-line); border-radius: 14px; overflow: hidden; }
+.tshow-item img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #EFEBE3; }
+.tshow-item figcaption {
+  padding: 8px 6px; font-size: 12px; font-weight: 700; color: var(--ap-ink-2);
+  text-align: center; line-height: 1.25;
+}
+
+/* ---------- MICRO-INTERAÇÃO: o ícone da lista pula ---------- */
+@keyframes listaPulse {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.14); }
+  55%  { transform: scale(.96); }
+  100% { transform: scale(1); }
+}
+.sacola-float.pulse, .mbar-lista.pulse { animation: listaPulse .6s cubic-bezier(.2,.8,.2,1); }
+@media (prefers-reduced-motion: reduce) { .sacola-float.pulse, .mbar-lista.pulse { animation: none; } }
+
+/* ---------- BARRA FIXA DE AÇÃO NO MOBILE ---------- */
+.mbar {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 9500;
+  gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255,255,255,.94);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-top: 1px solid var(--ap-line);
+}
+.mbar-zap, .mbar-lista {
+  flex: 1 1 0; min-height: 52px; border: 0; border-radius: 14px; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: inherit; font-size: 1rem; font-weight: 800; letter-spacing: .01em;
+}
+.mbar-zap { background: var(--ap-zap); color: #fff; text-decoration: none; }
+.mbar-zap i { font-size: 1.3rem; }
+.mbar-lista { background: var(--ap-white); color: var(--ap-ink); border: 2px solid var(--ap-line); }
+.mbar-lista .mbar-n {
+  min-width: 24px; height: 24px; padding: 0 6px; border-radius: 999px;
+  background: var(--ap-gold); color: #2B2B2B; font-size: .82rem; font-weight: 900;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.mbar.has-list .mbar-zap { flex: 1.2 1 0; }
+.mbar-lista[hidden] { display: none; }   /* o display acima venceria o atributo hidden */
+
+@media (max-width: 640px) {
+  .mbar { display: flex; }
+  /* a barra substitui os dois flutuantes, que se sobrepunham no canto */
+  .wa-fab, .floating-bar { display: none !important; }
+  body.apple { padding-bottom: 84px; }
+  body.apple.has-bar { padding-bottom: 148px; }  /* página-produto: barra de compra + barra fixa */
+  .pd-bar { bottom: 72px; }
+}
+
+/* ---------- CORREÇÃO DE HOVER EM TELAS DE TOQUE ---------- */
+@media (hover: none) {
+  .card:hover, .btn-dourado:hover, .btn-zap:hover, .btn-pill:hover,
+  .mural-thumb:hover, .ct-arrow:hover, .tile-links a:hover, .gnav-cta:hover {
+    transform: none; filter: none; box-shadow: inherit;
+  }
+  .card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+  /* alvos de toque confortáveis */
+  .btn-pill, .btn-dourado, .btn-zap { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .gnav-links a { padding-top: 10px; padding-bottom: 10px; }
+}
+
+/* ---------- MODAL DA LISTA: nota de preço ---------- */
+.modal-lista-nota {
+  padding: 12px 20px; font-size: .86rem; line-height: 1.45;
+  color: var(--ap-muted); background: var(--ap-cream); border-top: 1px solid var(--ap-line);
+}
+.modal-lista-fechar { background: none; border: 0; font-size: 1.6rem; line-height: 1; color: #999; cursor: pointer; padding: 0 4px; }
+.modal-lista-fechar:hover { color: #333; }
+.item-lista-tema.ok { color: var(--ap-gold-txt); font-size: .82rem; font-weight: 700; }
+
+/* ---------- temas.html: cabeçalho da galeria ---------- */
+.temas-h1 { font-weight: 900; letter-spacing: -.03em; font-size: clamp(1.9rem, 4.5vw, 2.8rem); color: var(--ap-ink); margin: 6px 0 8px; }
+.temas-sub { max-width: 58ch; margin: 0 auto; color: var(--ap-ink-2); font-size: 1rem; line-height: 1.55; }
+body.apple .tab-content figure.card { margin: 0; }
+body.apple .tab-content figure.card figcaption { font-size: .8rem; font-weight: 700; color: var(--ap-muted); margin-top: 6px; }
