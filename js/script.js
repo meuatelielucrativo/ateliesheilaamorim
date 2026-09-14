@@ -1,488 +1,304 @@
-// js/script.js - v3.2
+// js/script.js — v4 (CRO) — branch apple-lite
+// Mudanças desta versão:
+// - Fluxo de "escolher tema" REMOVIDO. Todo produto entra direto na lista.
+//   O tema passa a ser combinado no WhatsApp (menos atrito, menos abandono).
+// - CTA único "Adicionar à Lista" em todos os produtos.
+// - Micro-interação no ícone da lista a cada item adicionado.
+// - Barra fixa de ação no mobile (WhatsApp sempre à mão).
+// - Pop-up de boas-vindas removido.
+
 // Google Analytics — init centralizado (o <script async> de cada HTML carrega a lib)
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-MPB5QZX4X9');
 
-// ============================================================
-// 0. TRACKING DE EVENTOS (GA4) — medir o funil até o WhatsApp
-// Marque "clique_whatsapp" como conversão/evento principal no painel do GA4.
-// ============================================================
+var ZAP = '5522988241470';
+var FRASE_FINAL = 'Gostaria de ver as opções de temas para esses itens!';
+var MSG_PADRAO = 'Oi Sheila! Vim pelo site e quero saber mais sobre o enxoval personalizado.';
+
 function trackEvent(nome, params) {
   try { if (typeof gtag === 'function') gtag('event', nome, params || {}); } catch (e) {}
 }
 
 // ============================================================
-// 1. ADICIONAR PRODUTO (3 tipos: tema | nome | consulta)
+// 1. ADICIONAR PRODUTO — sempre entra na lista, sem desvio
+// O 3o parametro fica so por compatibilidade com os onclick que ja existem;
+// 'consulta' apenas marca o item como "sob consulta".
 // ============================================================
-function escolherProduto(categoria, nomeProduto, tipo = 'tema') {
-    
-    // TIPO 3: Orçamento sob consulta - vai direto pro Zap
-    if (tipo === 'consulta') {
-        const telefone = "5522988241470";
-        const msg = `Olá Sheila! 💛%0D%0AGostaria de um orçamento para: *${categoria}* - ${nomeProduto}.%0D%0AAguardo os detalhes. Obrigada! 🌸`;
-        trackEvent('clique_whatsapp', { origem: 'orcamento_consulta', produto: nomeProduto });
-        window.open(`https://wa.me/${telefone}?text=${msg}`, '_blank');
-        return;
-    }
-    
-    // TIPO 2: Só com nome - adiciona direto ao carrinho, sem passar por temas
-    if (tipo === 'nome') {
-        adicionarAoCarrinho({
-            categoria: categoria,
-            nome: nomeProduto,
-            matriz: null,
-            aguardando_tema: false
-        });
-        mostrarToast(`✅ ${nomeProduto} adicionado!`, 'sucesso');
-        return;
-    }
-    
-    // TIPO 1 (padrão): Com tema
-    // Adiciona ao carrinho com flag "aguardando_tema: true".
-    // A ordem FIFO é garantida: quem entrar primeiro, ganha tema primeiro.
-    adicionarAoCarrinho({
-        categoria: categoria,
-        nome: nomeProduto,
-        matriz: null,
-        aguardando_tema: true
-    });
-    
-    // Toast pendente pra mostrar ao chegar em temas.html
-    sessionStorage.setItem('toast_pendente', `✅ ${nomeProduto} adicionado — agora escolha o tema`);
-    
-    window.location.href = '../temas.html';
+function escolherProduto(categoria, nomeProduto, tipo) {
+  adicionarAoCarrinho({
+    categoria: categoria,
+    nome: nomeProduto,
+    sob_consulta: tipo === 'consulta'
+  });
+  mostrarToast('Item adicionado à sua lista', 'sucesso');
 }
 
 // ============================================================
-// 2. SELECIONAR TEMA - sempre aplica no PRIMEIRO item aguardando (FIFO)
+// 2. CARRINHO
 // ============================================================
-function selecionarMatriz(nomeMatriz) {
-    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
-
-    // Pega sempre o primeiro item que está aguardando tema (FIFO)
-    const indiceAlvo = carrinho.findIndex(item => item.aguardando_tema);
-
-    if (indiceAlvo === -1) {
-        alert("Ops! Por favor, escolha primeiro o produto (Toalha, Fralda...) no catálogo inicial.");
-        window.location.href = 'index.html#catalogo';
-        return;
-    }
-
-    // Aplica o tema no item
-    carrinho[indiceAlvo].matriz = nomeMatriz;
-    carrinho[indiceAlvo].aguardando_tema = false;
-    localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
-
-    atualizarContador();
-    atualizarBarraTemaTopo();
-
-    // Verifica se ainda tem outros itens aguardando tema
-    const proximoAguardando = carrinho.findIndex(item => item.aguardando_tema);
-    
-    if (proximoAguardando !== -1) {
-        atualizarBarraTemaTopo();
-        mostrarToast(`✅ Tema aplicado! Agora escolha o tema para: ${carrinho[proximoAguardando].nome}`, 'info', 3500);
-        return;
-    }
-
-    // Todos com tema: abre modal de sucesso
-    const modal = document.getElementById('modal-sucesso');
-    if (modal) {
-        modal.style.display = 'flex';
-    } else {
-        if (confirm("Item adicionado! Deseja finalizar o pedido no WhatsApp agora?")) {
-            finalizarCompraZap();
-        }
-    }
+function lerCarrinho() {
+  try { return JSON.parse(localStorage.getItem('meu_carrinho')) || []; }
+  catch (e) { return []; }
 }
 
-// ============================================================
-// 3. HELPER: adiciona item ao carrinho, retorna o índice
-// ============================================================
 function adicionarAoCarrinho(item) {
-    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
-    carrinho.push(item);
-    localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
-    trackEvent('adicionar_lista', { produto: item.nome, categoria: item.categoria });
-    atualizarContador();
-    return carrinho.length - 1;
-}
-
-// ============================================================
-// 4. TOAST DESLIZANTE (vem do topo, some sozinho)
-// ============================================================
-function mostrarToast(mensagem, tipo = 'sucesso', duracao = 2500) {
-    const antigo = document.getElementById('toast-atelier');
-    if (antigo) antigo.remove();
-
-    const cores = {
-        sucesso: '#25D366',
-        info:    '#E8B41B',
-        erro:    '#ff4d4d'
-    };
-
-    const toast = document.createElement('div');
-    toast.id = 'toast-atelier';
-    toast.style.cssText = `
-        position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-120%);
-        background: ${cores[tipo] || cores.sucesso}; color: white;
-        padding: 14px 22px; border-radius: 30px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.25); z-index: 99999;
-        font-weight: bold; font-size: 0.95rem; text-align: center;
-        max-width: 90%; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    `;
-    toast.innerHTML = mensagem;
-    document.body.appendChild(toast);
-
-    requestAnimationFrame(() => {
-        toast.style.transform = 'translateX(-50%) translateY(0)';
-    });
-
-    setTimeout(() => {
-        toast.style.transform = 'translateX(-50%) translateY(-120%)';
-        setTimeout(() => toast.remove(), 500);
-    }, duracao);
-}
-
-// ============================================================
-// 5. BARRA FIXA NO TOPO DO temas.html: "Escolhendo tema para X"
-// ============================================================
-function atualizarBarraTemaTopo() {
-    const barra = document.getElementById('barra-tema-topo');
-    if (!barra) return;
-
-    const carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
-    const aguardando = carrinho.find(item => item.aguardando_tema);
-
-    if (aguardando) {
-        barra.style.display = 'flex';
-        barra.innerHTML = `<i class="fas fa-palette"></i> Escolhendo tema para: <strong>${aguardando.nome}</strong>`;
-    } else {
-        barra.style.display = 'none';
-    }
-}
-
-// ============================================================
-// 6. MODAL / NAVEGAÇÃO
-// ============================================================
-function fecharModalSucesso() {
-    const modal = document.getElementById('modal-sucesso');
-    if (modal) modal.style.display = 'none';
-}
-
-function irParaInicio() {
-    window.location.href = 'index.html#catalogo';
-}
-
-// ============================================================
-// 6b. MODAL LISTA — ver itens + remover individualmente
-// ============================================================
-function injetarModalLista() {
-    const modal = document.createElement('div');
-    modal.id = 'modal-lista';
-    modal.className = 'modal-lista-overlay';
-    modal.innerHTML = `
-        <div class="modal-lista-content">
-            <div class="modal-lista-header">
-                <span>🛍️ Minha Lista</span>
-                <span class="modal-lista-fechar" onclick="fecharModalLista()">&times;</span>
-            </div>
-            <div id="modal-lista-itens" class="modal-lista-itens"></div>
-            <div class="modal-lista-footer">
-                <button class="btn-continuar-lista" onclick="fecharModalLista()">Continuar escolhendo</button>
-                <button id="btn-finalizar-lista" class="btn-finalizar-lista" onclick="finalizarCompraZap(); fecharModalLista();">
-                    <i class="fab fa-whatsapp"></i> Enviar no WhatsApp
-                </button>
-            </div>
-        </div>
-    `;
-    modal.addEventListener('click', (e) => { if (e.target === modal) fecharModalLista(); });
-    document.body.appendChild(modal);
-
-    const sacola = document.querySelector('.sacola-float');
-    if (sacola) sacola.onclick = mostrarLista;
-}
-
-function mostrarLista() {
-    const carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
-
-    if (carrinho.length === 0) {
-        mostrarToast('Sua lista está vazia!', 'erro');
-        return;
-    }
-
-    const container = document.getElementById('modal-lista-itens');
-    const btnFinalizar = document.getElementById('btn-finalizar-lista');
-    const temPendente = carrinho.some(item => item.aguardando_tema);
-
-    container.innerHTML = carrinho.map((item, index) => {
-        const temaHtml = item.aguardando_tema
-            ? `<span class="item-lista-tema pendente">⏳ Falta escolher tema</span>`
-            : item.matriz
-                ? `<span class="item-lista-tema ok">🎨 ${item.matriz}</span>`
-                : `<span class="item-lista-tema ok">✏️ Só com bordado do nome</span>`;
-
-        return `
-            <div class="item-lista">
-                <div class="item-lista-info">
-                    <strong>${item.nome}</strong>
-                    <span class="item-lista-cat">${item.categoria}</span>
-                    ${temaHtml}
-                </div>
-                <button class="btn-remover-item" onclick="removerItem(${index})" title="Remover item">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </div>
-        `;
-    }).join('');
-
-    btnFinalizar.disabled = temPendente;
-    btnFinalizar.style.opacity = temPendente ? '0.5' : '1';
-    btnFinalizar.title = temPendente ? 'Escolha o tema de todos os itens antes de enviar' : 'Finalizar pedido no WhatsApp';
-
-    document.getElementById('modal-lista').style.display = 'flex';
-}
-
-function fecharModalLista() {
-    const modal = document.getElementById('modal-lista');
-    if (modal) modal.style.display = 'none';
+  var carrinho = lerCarrinho();
+  carrinho.push(item);
+  localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
+  trackEvent('adicionar_lista', { produto: item.nome, categoria: item.categoria });
+  atualizarContador();
+  pulsarIconeLista();
+  return carrinho.length - 1;
 }
 
 function removerItem(index) {
-    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
-    carrinho.splice(index, 1);
-    localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
-    atualizarContador();
-    atualizarBarraTemaTopo();
-
-    if (carrinho.length === 0) {
-        fecharModalLista();
-        mostrarToast('Lista esvaziada!', 'info');
-    } else {
-        mostrarLista();
-    }
+  var carrinho = lerCarrinho();
+  carrinho.splice(index, 1);
+  localStorage.setItem('meu_carrinho', JSON.stringify(carrinho));
+  atualizarContador();
+  if (carrinho.length === 0) { fecharModalLista(); mostrarToast('Lista esvaziada', 'info'); }
+  else { mostrarLista(); }
 }
 
-// ============================================================
-// 7. LIMPAR SACOLA
-// ============================================================
 function limparSacola() {
-    if (confirm("Tem certeza que deseja limpar toda a sua lista de pedidos?")) {
-        localStorage.removeItem('meu_carrinho');
-        sessionStorage.removeItem('toast_pendente');
-        atualizarContador();
-        atualizarBarraTemaTopo();
-        fecharModalSucesso();
-    }
+  if (confirm('Tem certeza que deseja limpar toda a sua lista?')) {
+    localStorage.removeItem('meu_carrinho');
+    atualizarContador();
+    fecharModalLista();
+  }
 }
 
 // ============================================================
-// 8. FINALIZAR NO WHATSAPP (com bloqueio se houver item sem tema)
+// 3. MICRO-INTERACAO: o icone da lista "pula" a cada item
+// ============================================================
+function pulsarIconeLista() {
+  var alvos = document.querySelectorAll('.sacola-float, .mbar-lista');
+  alvos.forEach(function (el) {
+    el.classList.remove('pulse');
+    void el.offsetWidth;           // reinicia a animacao
+    el.classList.add('pulse');
+    setTimeout(function () { el.classList.remove('pulse'); }, 700);
+  });
+}
+
+// ============================================================
+// 4. TOAST
+// ============================================================
+function mostrarToast(mensagem, tipo, duracao) {
+  tipo = tipo || 'sucesso'; duracao = duracao || 2400;
+  var antigo = document.getElementById('toast-atelier');
+  if (antigo) antigo.remove();
+  var cores = { sucesso: '#1FA855', info: '#9A6B0F', erro: '#C0392B' };
+  var t = document.createElement('div');
+  t.id = 'toast-atelier';
+  t.setAttribute('role', 'status');
+  t.style.cssText = 'position:fixed;top:64px;left:50%;transform:translateX(-50%) translateY(-140%);' +
+    'background:' + (cores[tipo] || cores.sucesso) + ';color:#fff;padding:12px 20px;border-radius:30px;' +
+    'box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:99999;font-weight:700;font-size:.95rem;text-align:center;' +
+    'max-width:90%;transition:transform .35s cubic-bezier(.2,.8,.2,1)';
+  t.textContent = mensagem;
+  document.body.appendChild(t);
+  requestAnimationFrame(function () { t.style.transform = 'translateX(-50%) translateY(0)'; });
+  setTimeout(function () {
+    t.style.transform = 'translateX(-50%) translateY(-140%)';
+    setTimeout(function () { t.remove(); }, 400);
+  }, duracao);
+}
+
+// ============================================================
+// 5. MODAL DA LISTA
+// ============================================================
+function injetarModalLista() {
+  if (document.getElementById('modal-lista')) return;
+  var modal = document.createElement('div');
+  modal.id = 'modal-lista';
+  modal.className = 'modal-lista-overlay';
+  modal.innerHTML =
+    '<div class="modal-lista-content" role="dialog" aria-modal="true" aria-label="Minha lista">' +
+      '<div class="modal-lista-header"><span>Minha Lista</span>' +
+        '<button type="button" class="modal-lista-fechar" onclick="fecharModalLista()" aria-label="Fechar">&times;</button></div>' +
+      '<div id="modal-lista-itens" class="modal-lista-itens"></div>' +
+      '<div class="modal-lista-nota">O valor de cada peça já inclui a personalização e o bordado. ' +
+        'Os temas a gente escolhe junto, no WhatsApp.</div>' +
+      '<div class="modal-lista-footer">' +
+        '<button type="button" class="btn-continuar-lista" onclick="fecharModalLista()">Continuar escolhendo</button>' +
+        '<button type="button" class="btn-finalizar-lista" onclick="finalizarCompraZap()">' +
+          '<i class="fab fa-whatsapp"></i> Enviar no WhatsApp</button>' +
+      '</div>' +
+    '</div>';
+  modal.addEventListener('click', function (e) { if (e.target === modal) fecharModalLista(); });
+  document.body.appendChild(modal);
+}
+
+function mostrarLista() {
+  var carrinho = lerCarrinho();
+  if (carrinho.length === 0) { mostrarToast('Sua lista está vazia', 'erro'); return; }
+  injetarModalLista();
+  document.getElementById('modal-lista-itens').innerHTML = carrinho.map(function (item, i) {
+    var extra = item.sob_consulta ? '<span class="item-lista-tema ok">Orçamento sob consulta</span>' : '';
+    return '<div class="item-lista"><div class="item-lista-info">' +
+      '<strong>' + item.nome + '</strong>' +
+      '<span class="item-lista-cat">' + item.categoria + '</span>' + extra +
+      '</div><button type="button" class="btn-remover-item" onclick="removerItem(' + i + ')" ' +
+      'aria-label="Remover item"><i class="fas fa-trash-alt"></i></button></div>';
+  }).join('');
+  document.getElementById('modal-lista').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModalLista() {
+  var m = document.getElementById('modal-lista');
+  if (m) m.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// ============================================================
+// 6. ENVIAR NO WHATSAPP — monta a URL com os itens da lista
 // ============================================================
 function finalizarCompraZap() {
-    let carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
+  var carrinho = lerCarrinho();
+  if (carrinho.length === 0) { mostrarToast('Sua lista está vazia', 'erro'); return; }
 
-    if (carrinho.length === 0) {
-        mostrarToast('Sua lista está vazia!', 'erro');
-        return;
-    }
+  var linhas = ['Olá Sheila! Vim pelo site e montei minha lista:', ''];
+  carrinho.forEach(function (item, i) {
+    linhas.push((i + 1) + '. ' + item.categoria + ' - ' + item.nome + (item.sob_consulta ? ' (sob consulta)' : ''));
+  });
+  linhas.push('');
+  linhas.push(FRASE_FINAL);
 
-    const semTema = carrinho.find(item => item.aguardando_tema);
-    if (semTema) {
-        mostrarToast(`⚠️ Ainda falta escolher tema para: ${semTema.nome}`, 'erro', 3500);
-        fecharModalSucesso();
-        if (!window.location.pathname.includes('temas')) {
-            setTimeout(() => { window.location.href = 'temas.html'; }, 1200);
-        }
-        return;
-    }
-
-    let mensagem = "Olá Sheila! 💛%0D%0A%0D%0A";
-    mensagem += "Gostaria de orçar os seguintes itens personalizados:%0D%0A%0D%0A";
-
-    carrinho.forEach((item, index) => {
-        mensagem += `*${index + 1}. ${item.categoria}* - ${item.nome}%0D%0A`;
-        if (item.matriz) {
-            mensagem += `   🎨 Tema: ${item.matriz}%0D%0A`;
-        } else {
-            mensagem += `   ✏️ Somente com bordado do nome%0D%0A`;
-        }
-        mensagem += "-----------------%0D%0A";
-    });
-
-    mensagem += "%0D%0AAguardo o valor e prazo de entrega. Obrigada! 🌸";
-
-    const telefoneSheila = "5522988241470";
-    trackEvent('clique_whatsapp', { origem: 'finalizar_pedido', itens: carrinho.length });
-    window.open(`https://wa.me/${telefoneSheila}?text=${mensagem}`, '_blank');
-    fecharModalSucesso();
+  var url = 'https://wa.me/' + ZAP + '?text=' + encodeURIComponent(linhas.join('\n'));
+  trackEvent('clique_whatsapp', { origem: 'finalizar_pedido', itens: carrinho.length });
+  window.open(url, '_blank');
+  fecharModalLista();
 }
 
 // ============================================================
-// 9. CONTADOR + ESTADO VISUAL DO BOTÃO FINALIZAR
+// 7. CONTADOR + BARRA FIXA DE ACAO NO MOBILE
 // ============================================================
+function injetarBarraMobile() {
+  if (document.getElementById('mbar')) return;
+  var bar = document.createElement('div');
+  bar.id = 'mbar';
+  bar.className = 'mbar';
+  bar.innerHTML =
+    '<button type="button" class="mbar-lista" onclick="mostrarLista()" hidden>' +
+      '<i class="fas fa-clipboard-list"></i> Minha Lista <span class="mbar-n">0</span></button>' +
+    '<a class="mbar-zap" href="https://wa.me/' + ZAP + '?text=' + encodeURIComponent(MSG_PADRAO) +
+      '" target="_blank" rel="noopener" data-zap="mbar"><i class="fab fa-whatsapp"></i> <span>Fale conosco</span></a>';
+  document.body.appendChild(bar);
+}
+
 function atualizarContador() {
-    const carrinho = JSON.parse(localStorage.getItem('meu_carrinho')) || [];
-    const temItemSemTema = carrinho.some(item => item.aguardando_tema);
+  var n = lerCarrinho().length;
 
-    const barras = document.querySelectorAll('.floating-bar');
-    const contadores = document.querySelectorAll('.contador');
-    const sacolas = document.querySelectorAll('.sacola-float');
+  document.querySelectorAll('.floating-bar').forEach(function (b) { b.style.display = n > 0 ? 'flex' : 'none'; });
+  document.querySelectorAll('.contador, .mbar-n').forEach(function (c) { c.textContent = n; });
+  document.querySelectorAll('.sacola-float').forEach(function (s) { s.title = 'Ver minha lista'; });
 
-    barras.forEach(barra => {
-        barra.style.display = carrinho.length > 0 ? 'flex' : 'none';
-    });
-
-    contadores.forEach(cont => {
-        cont.innerText = carrinho.length;
-    });
-
-    sacolas.forEach(sacola => {
-        if (temItemSemTema) {
-            sacola.style.opacity = '0.55';
-            sacola.style.filter = 'grayscale(0.6)';
-            sacola.title = 'Você ainda precisa escolher o tema de um item';
-        } else {
-            sacola.style.opacity = '1';
-            sacola.style.filter = 'none';
-            sacola.title = 'Finalizar pedido no WhatsApp';
-        }
-    });
+  var mb = document.getElementById('mbar');
+  if (!mb) return;
+  var btn = mb.querySelector('.mbar-lista');
+  var zap = mb.querySelector('.mbar-zap');
+  btn.hidden = n === 0;
+  mb.classList.toggle('has-list', n > 0);
+  zap.querySelector('span').textContent = n > 0 ? 'Enviar lista' : 'Fale conosco';
+  if (n > 0) {
+    zap.setAttribute('href', '#');
+    zap.onclick = function (e) { e.preventDefault(); finalizarCompraZap(); };
+  } else {
+    zap.onclick = null;
+    zap.setAttribute('href', 'https://wa.me/' + ZAP + '?text=' + encodeURIComponent(MSG_PADRAO));
+  }
 }
 
 // ============================================================
-// 10. INICIALIZAÇÃO
-// ============================================================
-window.addEventListener('scroll', mostrarBotaoTopo);
-
-window.addEventListener('load', function() {
-    injetarModalLista();
-    renderizarTemas();
-    atualizarContador();
-    atualizarBarraTemaTopo();
-
-    const toastPendente = sessionStorage.getItem('toast_pendente');
-    if (toastPendente) {
-        mostrarToast(toastPendente, 'sucesso', 3000);
-        sessionStorage.removeItem('toast_pendente');
-    }
-
-    // Popup de entrada DESATIVADO no load — abria em ~1s e dava fricção no
-    // tráfego pago (forte suspeito do bounce de 9s). No Bloco 2 ele vira isca
-    // de captura de lead disparada por exit-intent. Segue oculto no DOM.
-
-    window.addEventListener('click', function(event) {
-        const modal = document.getElementById('modal-sucesso');
-        if (modal && event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    iniciarDepoimentos();
-
-    // Tracking de cliques: links de WhatsApp e navegação pro catálogo
-    document.addEventListener('click', function (e) {
-        const a = e.target.closest && e.target.closest('a');
-        if (!a) return;
-        const href = a.getAttribute('href') || '';
-        if (/wa\.me|whatsapp/i.test(href)) {
-            trackEvent('clique_whatsapp', { origem: a.dataset.zap || 'link', destino: href.slice(0, 60) });
-        } else if (/paginas-produtos\//i.test(href)) {
-            trackEvent('ver_produto', { item: (a.textContent || '').trim().slice(0, 40), destino: href });
-        }
-    });
-
-    // Reveal no scroll (movimento leve) — IntersectionObserver + classe .in
-    const _rev = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (en) {
-                if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-            });
-        }, { threshold: 0.12 });
-        _rev.forEach(function (el) { io.observe(el); });
-    } else {
-        _rev.forEach(function (el) { el.classList.add('in'); });
-    }
-});
-
-function fecharPopup() {
-    const popup = document.getElementById('popup-agenda');
-    if (popup) popup.style.display = 'none';
-}
-
-function iniciarDepoimentos() {
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.testimonial-slide');
-
-    if (slides.length > 0) {
-        slides[0].classList.add('active');
-        setInterval(() => {
-            slides[slideIndex].classList.remove('active');
-            slideIndex = (slideIndex + 1) % slides.length;
-            slides[slideIndex].classList.add('active');
-        }, 5000);
-    }
-}
-
-// ============================================================
-// 11. GALERIA DE TEMAS — renderização dinâmica
+// 8. GALERIA DE TEMAS (temas.html) — vitrine, sem selecao
 // ============================================================
 function renderizarTemas() {
-    if (typeof TEMAS === 'undefined') return;
+  if (typeof TEMAS === 'undefined') return;
+  var tabsDiv = document.getElementById('tabs');
+  var conteudoDiv = document.getElementById('conteudo-temas');
+  if (!tabsDiv || !conteudoDiv) return;
 
-    const tabsDiv = document.getElementById('tabs');
-    const conteudoDiv = document.getElementById('conteudo-temas');
-    if (!tabsDiv || !conteudoDiv) return;
+  TEMAS.forEach(function (tema) {
+    var btn = document.createElement('button');
+    btn.className = 'tab-link';
+    btn.type = 'button';
+    btn.textContent = tema.label;
+    btn.onclick = function (e) { abrirTab(e, tema.id); };
+    tabsDiv.appendChild(btn);
 
-    TEMAS.forEach(tema => {
-        const btn = document.createElement('button');
-        btn.className = 'tab-link';
-        btn.textContent = tema.label;
-        btn.onclick = (e) => abrirTab(e, tema.id);
-        tabsDiv.appendChild(btn);
+    var div = document.createElement('div');
+    div.id = tema.id;
+    div.className = 'tab-content';
+    div.innerHTML = '<div class="grid-container">' + tema.imagens.map(function (img) {
+      var id = img.replace(/\.[^.]+$/, '');
+      return '<figure class="card"><img src="img/temas/' + tema.pasta + '/' + img +
+        '" alt="Tema ' + id + '" loading="lazy" decoding="async"><figcaption>' + id + '</figcaption></figure>';
+    }).join('') + '</div>';
+    conteudoDiv.appendChild(div);
+  });
 
-        const div = document.createElement('div');
-        div.id = tema.id;
-        div.className = 'tab-content';
-        div.innerHTML = `<div class="grid-container">${
-            tema.imagens.map(img => {
-                const id = img.replace(/\.[^.]+$/, '');
-                return `<div class="card">
-                    <img src="img/temas/${tema.pasta}/${img}" alt="${id}" loading="lazy">
-                    <p>${id}</p>
-                    <button class="btn-dourado" onclick="selecionarMatriz('${id}')">Escolher</button>
-                </div>`;
-            }).join('')
-        }</div>`;
-        conteudoDiv.appendChild(div);
-    });
-
-    if (tabsDiv.firstChild) tabsDiv.firstChild.click();
+  if (tabsDiv.firstChild) tabsDiv.firstChild.click();
 }
 
 function abrirTab(evt, nomeTema) {
-    document.querySelectorAll('.tab-content').forEach(el => { el.style.display = 'none'; });
-    document.querySelectorAll('.tab-link').forEach(el => { el.classList.remove('active'); });
-    const alvo = document.getElementById(nomeTema);
-    if (alvo) alvo.style.display = 'block';
-    if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
-
-    if (window.innerWidth <= 768 && alvo) {
-        alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  document.querySelectorAll('.tab-content').forEach(function (el) { el.style.display = 'none'; });
+  document.querySelectorAll('.tab-link').forEach(function (el) { el.classList.remove('active'); });
+  var alvo = document.getElementById(nomeTema);
+  if (alvo) alvo.style.display = 'block';
+  if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+  if (window.innerWidth <= 768 && alvo) alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function mostrarBotaoTopo() {
-    const btn = document.getElementById('btn-topo');
-    if (!btn) return;
-    btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? 'block' : 'none';
+  var btn = document.getElementById('btn-topo');
+  if (!btn) return;
+  btn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
 }
+function subirTopo() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-function subirTopo() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+// ============================================================
+// 9. INICIALIZACAO
+// ============================================================
+window.addEventListener('scroll', mostrarBotaoTopo);
+
+window.addEventListener('load', function () {
+  injetarModalLista();
+  injetarBarraMobile();
+  renderizarTemas();
+  atualizarContador();
+
+  // a sacola do desktop abre o modal da lista
+  document.querySelectorAll('.sacola-float').forEach(function (s) { s.onclick = mostrarLista; });
+
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharModalLista(); });
+
+  // Tracking de cliques
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/wa\.me|whatsapp/i.test(href)) {
+      trackEvent('clique_whatsapp', { origem: a.dataset.zap || 'link', destino: href.slice(0, 60) });
+    } else if (/paginas-produtos\//i.test(href)) {
+      trackEvent('ver_produto', { item: (a.textContent || '').trim().slice(0, 40), destino: href });
+    }
+  });
+
+  // Reveal no scroll
+  var rev = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    rev.forEach(function (el) { io.observe(el); });
+  } else {
+    rev.forEach(function (el) { el.classList.add('in'); });
+  }
+});
