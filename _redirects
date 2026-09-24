@@ -54,3 +54,13 @@
 # inexistente como "movida permanentemente" e mascararia links
 # quebrados, poluindo o índice. Sem catch-all = comportamento correto.
 # ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# V2 APPLE-LITE (branch apple-lite): novas paginas
+# ------------------------------------------------------------
+
+/toalha-fralda   /paginas-produtos/toalha-fralda.html  301
+/ajuda           /ajuda.html                           301
+/atelier         /atelier.html                         301
+/feedbacks       /feedbacks.html                       301
+/depoimentos     /feedbacks.html                       301
